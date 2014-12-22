@@ -1,0 +1,9 @@
+
+#Von Neumann Architektur
+* SISD Single Instruction Single Data
+* MISD Multiple Instruction Single Data
+* MIMD Mulitple Instruction Multiple Data
+* SIMD Single Instruction Multiple Data
+
+![VonNeumannArchitektur](img/vonNeumannArchitektur.png)
+

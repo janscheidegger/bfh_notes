@@ -1,0 +1,77 @@
+
+# Aussagenlogik
+## Allgemein
+$A \wedge B$ Konjunktion UND
+$A \vee B$ Disjunktion OR
+$\neg A$ Negation NOT
+
+## Normalformen
+Disjunktive Normalform $((A \wedge B \wedge C) \vee (A \wedge B \wedge C))$
+Konjunktive Normalform $((A \vee B \vee C) \wedge (A \vee B \wedge C))$
+
+Zu jeder Wahrheitstabelle in der mindestens eine Aussage wahr ist lässt sich
+die Disjunktive normalform bilden.
+
+1. Minterme bilden: Wenn A B C = f f t Minterm: $\neg A \wedge \neg b \wedge
+   C$
+2. Alle Minterme mit $\vee$ verbinden
+3. Minterm nur wenn f(A,B,C) = t
+
+Zu jeder Wahrheitstabelle in der mindestens eine Aussage falsch ist lässt
+sich die Konjunktive Normalform bilden.
+
+1. Maxterme bilen: Wenn A B C = f f t Maxterm: $A \vee B \vee \neg C$
+2. Alle Maxterme mit $\wedge$ verbinden
+3. Maxterm nur wenn f(A,B,C) = f
+
+## Karnaugh-Veitch-Diagramme (KV-Diagramm)
+Normalformen
+1. Karnaugh Diagramm füllen
+\karnaughmap{4}{f(a,b,c,d):}{abcd}{1110011001100110}{}
+
+2. Gruppen Bilden
+    für Minterm: 1en gruppieren
+    für Maxterm: 0en gruppieren
+
+3. für Minterme 1er Gruppen mit $\vee$ verbinden
+    für Maxterme 0er Gruppen invertiert mit $\wedge$ verbinden
+
+## Tautologien, Kontradiktionen und logische äquivalenz
+Tautologie: Immer wahr
+Kontradiktion: Immer falsch
+Logische äquivalenz: Aussage P ist logisch äquivalent/gleichwertig zu aussagen D
+
+## Gesetze der Aussagenlogik
+![Gesetze der Aussagenlogik](img/gesetzeDerAussagenlogik.png)
+
+## XOR, NAND und NOR
+XOR = Entweder A oder B
+NAND = AND invers
+NOR = OR invers
+
+## Implikation
+Wenn A, dann B
+Ist nur falsch, wenn A wahr und B falsch
+$A \rightarrow B$
+
+\begin{tabular}{ c c | c c c }
+A & B & Implikation & Umkehrung & Kontraposition \\
+A & B & $A \Rightarrow B$ & $B \Rightarrow A$ & $\neg B \Rightarrow \neg A$ \\
+\hline
+w & w & w & w & w \\
+w & f & f & w & f \\
+f & w & w & f & w \\
+f & f & w & w & w \\
+\end{tabular}
+
+## Logische Schlüsse
+Ein logischer Schluss gilt: Wenn
+$A_1 \wedge A_2 \wedge A_3 \Rightarrow C$ immer wahr
+
+$A_1 \wedge A_2 \wedge A_3 \wedge \neg C$ immer falsch
+
+## Resolution
+1. Aussagen in KNF umschreiben
+2. Leere Menge herleiten
+
+

@@ -1,0 +1,41 @@
+
+#Der Fetch-Execute-Cycle
+
+* Compiler erzeugt Objektcode
+* Linker linkt eigenen Code mit Systemcode
+* Loader lädt ins Memory
+* Insturction pointer der CPU wird initialisiert mit der erster Instruction des
+  Codes
+
+## Ablaufverarbeitung einer Addition
+
+Psudeocode Addition in Assembler REG => Register im CPU Bsp. ALX:
+    
+    MOV REG<-[A]
+    
+    ADD REG<-[B]
+    
+    MOV [C]<-REG
+
+### MOV REG<-[A]
+1. Inhalt des Instruction Pointers wird ins Adressregister verschoben
+2. Adressregister zeigt auf zu ladende (fetch) Stelle und wird ins
+   Instructionregister geschrieben.
+3. Instruction Pointer wird um Anzahl Bytes der Instruction erhöht
+4. Control Unit verlangt ausführen des Befehls
+5. Zahl aus [A] wird ins Register geladen 
+
+### MOV REG<-[B]
+1. Inhalt des Instruction Pointers wird ins Adressregister verschoben
+2. Adressregister zeigt auf zu ladende (fetch) Stelle und wird ins Instructionregister geschreiben.
+3. Instruction Pointer wird um Anzahl Bytes der Instruction erhöht
+4. Control Unit verlangt ausführen des Befehls
+5. Wert aus [B] wird zum Wert im Register addiert ([A]+[B] nun im Register
+
+### MOV [C]<-REG
+1. Inhalt des Instruction Pointers wird ins Adressregister verschoben
+2. Adressregister zeigt auf zu ladende (fetch) Stelle und wird ins
+   Instructionregister geschrieben
+3. Instruction Pointer wird um Anzal Bytes der Instruction erhöht
+4. Control Unit verlangt ausführen des Befehls
+5. Wert aus dem Register wird nach [C] verschoben

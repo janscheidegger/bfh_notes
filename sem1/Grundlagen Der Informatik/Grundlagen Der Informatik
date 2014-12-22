@@ -1,0 +1,385 @@
+
+# Zahlen und Werte
+* Zahlen repräsentieren Werte
+    * Jass "Z"
+    * Römisch MM
+    * Basis 10 (Arabisch)
+      Positionelles System
+      $\sum\limits_{i=0}^n a_n\times10^i$
+    * Basis 2 (Binär)
+      Positionelles System
+      $\sum\limits_{i=0}^n a_n\times2^i$
+      $a_n \epsilon {0,1}$
+    * Basis 16 (Hexadexmial)
+      Positionelles System
+      $\sum\limits_{i=0}^n a_n\times16^i$
+      $a_n \epsilon {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}$
+      $A2_16$ -> Mathematik
+      0xA2 -> Informatik
+
+## Baseconversion
+![Conversion](img/convert.png)
+
+## Digitale Realität
+* Alles wird mit "Wörtern" aus {0,1} dargestellt
+* Fixe Wortbreite je nach Architektur
+    * 8 Bit
+    * 16 Bit
+    * 32 Bit
+    * 64 Bit
+
+### Beispiel Kilometerzähler (Addition mit "Bit abschneiden")
+9998 +1
+
+9999 +1
+
+0000 +1
+
+0001
+
+$a\oplus b:= a+b \pmod n^m$
+
+n => Basis
+
+m => Wortlänge
+
+### Einerkomplement K1 (Inversieren)
+$K_1(a_n...a_0) := \neg a_n...\neg a_0$
+
+* Beispiel: $K_1(101110) = 010001$
+
+### Zweierkompleent K2 (Negation)
+$K2(a_m ... a_0) := K_1(a_n...a_0)\oplus 1$
+
+* Beispiel: $K_2(0010111) = K_1(00101111)\oplus 1$
+                        = 11010000 $\oplus$ 1
+                        = 11010001
+
+### Der Zahlenkreis
+
+Das Carry-Bit zeigt einen Fehler bei unsigned Addition
+
+Das Overflow-Bit zeigt einen Fehler bei Signed Addition
+
+\begin{equation}
+\frac{
+    \begin{array}[b]{r}
+          \left( a_n a_{n-1}...a_1 a_0 \right)\\
+                + \left( b_n b_{n-1}...b_1 b_0 \right)
+                    \end{array}
+                      }{
+                          \left(c_{n+1} c_n c_{n-1}...c_1 c_0 \right)
+                            }
+                            \end{equation}
+                            
+* Carry-Flag: $c_{n+1}$
+* Overflow-Flag: $(\neg a_n\land\neg b_n\land c_n)\lor(a_n\land
+  b_n\land\neg c_n)$
+* Zero-Flag: $\neg(c_n\lor c_{n-1}...\lor c_0)$
+* Sign-Flag: $c_n$
+
+#Computer Architektur
+* Transistor
+* Gates
+* Simple Circuits
+    * Mulitplexer
+    * Encoder
+* Complexe Circuits
+    * Computer
+    * Rechner
+
+## Transistor
+
+(Bild Emiter Basis Collector)
+(Bild Kennkurve)
+(Bild SchaltbildSymbol)
+
+## Gates
+
+### AND Gate
+(Bild der Schaltung)
+
+\begin{tabular}{ c  c | c  c  c  c  c }
+A & B & ( & A & $\&$ & B & )\\
+\hline 
+1 & 1 &  & 1 & \textcolor{red}{1} & 1 & \\
+1 & 0 &  & 1 & \textcolor{red}{0} & 0 & \\
+0 & 1 &  & 0 & \textcolor{red}{0} & 1 & \\
+0 & 0 &  & 0 & \textcolor{red}{0} & 0 & \\
+\end{tabular}
+
+### OR Gate
+Bild der Schaltung
+
+\begin{tabular}{ c  c | c  c  c  c  c }
+A & B & ( & A & $\lor$ & B & )\\
+\hline 
+1 & 1 &  & 1 & \textcolor{red}{1} & 1 & \\
+1 & 0 &  & 1 & \textcolor{red}{1} & 0 & \\
+0 & 1 &  & 0 & \textcolor{red}{1} & 1 & \\
+0 & 0 &  & 0 & \textcolor{red}{0} & 0 & \\
+\end{tabular}
+
+## Simple Circuits
+
+### Half Adder
+
+![Half Adder](img/halfAdder.png)
+
+\begin{tabular}{ c  c | c  c }
+A & B & Carry & Source \\
+\hline 
+0 & 0 &  0 & 0  \\
+0 & 1 &  0 & 1  \\
+1 & 0 &  0 & 1  \\
+1 & 1 &  0 & 0  \\
+\end{tabular}
+
+### Full Adder
+
+![Full Adder](img/fullAdder.jpg)
+
+\begin{tabular}{c c c | c c }
+A & B & $C_{IN}$ & $C_{OUT}$ & S \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0 \\
+1 & 0 & 0 & 0 & 1 \\
+1 & 0 & 1 & 1 & 0 \\
+1 & 1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{tabular}
+
+### Decoder
+
+![Decoder](img/decoder.jpg)
+
+\begin{tabular}{c c | c c c c}
+$S_0$ & $S_1$ & $O_0$ & $0_1$ & $O_2$ & $O_3$ \\
+\hline
+0 & 0 & 0 & 0 & 0 & $I_3$ \\
+0 & 1 & 0 & 0 & $I_2$ & 0 \\
+1 & 0 & 0 & $I_1$ & 0 & 0 \\
+1 & 1 & $I_0$ & 0 & 0 & 0 \\
+\end{tabular}
+
+### Multiplexer
+**2to1**
+
+![2to1 Multiplexer](img/2to1Multiplexer.png)
+
+\begin{tabular}{c | c }
+S & Z \\
+\hline
+0 & a \\
+1 & b \\
+\end{tabular}
+
+**4to1**
+
+![4to1 Multiplexer](img/4to1Multiplexer.png)
+
+\begin{tabular}{c c | c}
+$S_1$ & $S_2$ & Z \\
+\hline
+0 & 0 & a \\
+0 & 1 & b \\
+1 & 0 & c \\
+1 & 1 & d \\
+\end{tabular}
+
+## Mermory
+
+### RS-Flip-Flop
+
+
+![RS-Flip-Flop](img/rsFlipFlop.png)
+
+
+\begin{tabular}{c c | c c }
+R & S & Q & $\neg Q$ \\
+\hline
+0 & 0 & Q & $\neg Q$ \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 1 & Illegal & Illegal \\
+\end{tabular}
+
+### ROM (Read Only Memory)
+
+* EROM Erasable Rom
+* EEROM Electrical EROM
+* ...
+* Flash
+
+**Struktur**
+
+* Mit einem Adressbus n kann ein n Input einen $2^n$ Output erzeugen
+* Beim Beispiel Mem[3] wäre die 3 die Adresse
+* Speicherzelle = Speicher
+* 8 Bit Data - Read(4Bit Addr)
+* 2 Dimensionen
+    * Wo? Adresse
+    * Was? Daten
+
+### RAM (Random Access Memory)
+
+* 4x4 Bit
+* Addressraum
+* Adressbus = 2
+* x - write(2Bit addr, 4 Bit data)
+
+#Von Neumann Architektur
+* SISD Single Instruction Single Data
+* MISD Multiple Instruction Single Data
+* MIMD Mulitple Instruction Multiple Data
+* SIMD Single Instruction Multiple Data
+
+![VonNeumannArchitektur](img/vonNeumannArchitektur.png)
+
+
+# CPU
+* Memory
+    * enthält Programminstruktionen
+    * enthält Plätze für Variablen
+* Instruction Pointer
+    * enthält Adresse der nächsten Instruktion
+    * Wird um Grösse der letzten Instruktion erhöht
+    * Wird bei Sprunkanweisungen neu gesetzt
+* Address Register
+    * enthält Adresse der zu holenden Instruktion
+    * der zu lesenden/schreibenden Daten
+* Instruktionregister
+    * enthält in der Phase fetch die nächste auszuführende Instruktion
+    * hat Kapazität um längste Anweisung aufzunehmen
+* Akkumulator
+    * speichert temporär Daten/Adressen
+    * speichert oft Herkunftsort/Ziel bei Arithmetischen Operationen
+    * Zugriff schneller als Zugriff auf Speicher
+* ALU
+    * Verbindung zu Registern
+    * Steuereingägne zur festelegung von Operationen
+    * Resultat wird an Zielregister weitergeleitet
+    * hält Flags für ControlUnit bereit Bsp: Carry, Overflow
+* ControlUnit
+    * steuert rozessor durch Gates
+    * holt und Interpretiert Instruktionen
+    * Bestimme Instruktionen erlauben Flags zu testen
+
+#Der Fetch-Execute-Cycle
+
+* Compiler erzeugt Objektcode
+* Linker linkt eigenen Code mit Systemcode
+* Loader lädt ins Memory
+* Insturction pointer der CPU wird initialisiert mit der erster Instruction des
+  Codes
+
+## Ablaufverarbeitung einer Addition
+
+Psudeocode Addition in Assembler REG => Register im CPU Bsp. ALX:
+    
+    MOV REG<-[A]
+    
+    ADD REG<-[B]
+    
+    MOV [C]<-REG
+
+### MOV REG<-[A]
+1. Inhalt des Instruction Pointers wird ins Adressregister verschoben
+2. Adressregister zeigt auf zu ladende (fetch) Stelle und wird ins
+   Instructionregister geschrieben.
+3. Instruction Pointer wird um Anzahl Bytes der Instruction erhöht
+4. Control Unit verlangt ausführen des Befehls
+5. Zahl aus [A] wird ins Register geladen 
+
+### MOV REG<-[B]
+1. Inhalt des Instruction Pointers wird ins Adressregister verschoben
+2. Adressregister zeigt auf zu ladende (fetch) Stelle und wird ins Instructionregister geschreiben.
+3. Instruction Pointer wird um Anzahl Bytes der Instruction erhöht
+4. Control Unit verlangt ausführen des Befehls
+5. Wert aus [B] wird zum Wert im Register addiert ([A]+[B] nun im Register
+
+### MOV [C]<-REG
+1. Inhalt des Instruction Pointers wird ins Adressregister verschoben
+2. Adressregister zeigt auf zu ladende (fetch) Stelle und wird ins
+   Instructionregister geschrieben
+3. Instruction Pointer wird um Anzal Bytes der Instruction erhöht
+4. Control Unit verlangt ausführen des Befehls
+5. Wert aus dem Register wird nach [C] verschoben
+
+# 6502 Addressing Modes
+
+## Non-Indexed, non Memory
+Addressierungen welche nicht auf den Memory zugreifen
+
+### Accumulator
+Instruktionen welche das Register A als Ziel haben. Beispiel: DEC A, ROL A
+
+### Immediate
+Die Daten werden direkt angegeben ohne ein Zugriff auf das Memory durchzuführen.
+Dies wird dadurch erreicht, dass ein # vorangestellt wird. Beispiel: LDA
+#$B2
+
+### Implied
+Die Anweisung impliziert direkt eine Addresse/ein Register welche
+verändert/auf das Zugegriffen wird. Beispiel: CLC löscht das Carry-Flag
+
+## Non-Indexed
+
+### Relative
+Relative Adressierung wird nur für Branching (Bedingte Sprünge) verwendet. Das
+Byte nach dem Opcode ist der Branch offset. Maximal 127 Bytes vorwärts/128 Bytes
+rückwärts.
+
+### Absolute
+Nach dem Opcode wird direkt die Adresse auf die Zugegriffen werden soll
+angegeben. Beispiel: LDX $B432
+
+### Zero-Page
+Wie absolute, jedoch kann nur auf die ersten 256 Bytes zugriffen werden, da die
+Adresse nur aus einem Byte besteht. Benötigt weniger Cycles als Absolute
+adressierung. Beispiel: LDX $B4
+
+### Indirect
+Wird nur von der JMP instruction verwendet.
+
+Memory:
+
+1000 52 3a b5 43 68 f4
+
+JMP ($1000) setzt nun den Programm Counter auf $3a52
+
+##Indexed
+Beim Indexed Adressing werden die Register X und Y als Offset verwendet.
+
+###Absoulte Indexed
+X oder Y wird zu der Addresse Addiert. Beispiel:
+
+LDX #$1
+
+STA $1000,X
+
+Akkumulator wird in das Regsiter $1001 geschrieben.
+
+### Zero-Page Indexed
+Wie absolute Indexed, nur das nur auf die ersten 256 Bytes zugegriffen werden
+kann. Das "Ergebnis" bleibt immer Zero-Page, wenn also ein Carry entstehen
+würde, wird das Carry verworfen und auf die Zero-Page mit der ensprechenden
+Adresse zugegriffen.
+
+### Indexed Indirect
+Dieser Modus wird nur mit dem X-Register verwendet. Vorgang (X=#$4):
+
+1. LDA($20,X) (Die erste zu ladende Adresse muss sich im Zero Page befinden.)
+2. Speicher in Adresse 0024 wird gelesen: 0024 43 56
+3. Register A wird mit den Daten aus $5643 gefüllt.
+
+### Indirect Indexed
+Dieser Modus wird nur mit dem Y-Register verwendet. Vorgang (Y=#$10):
+
+1. LDA($20),Y (Die erste zu ladende Adresse muss sich im ZeroPage befinden)
+2. Speicher in Adresse 0020 wird gelesen: 0020 43 56
+3. Y wird zum Resultat Addiert
+4. Register A wird mit den Daten aus $5653 befüllt

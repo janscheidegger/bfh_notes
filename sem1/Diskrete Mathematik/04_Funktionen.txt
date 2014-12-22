@@ -1,0 +1,40 @@
+
+#Funktionen
+
+##Definition
+Eine Funktion ist eine Dreiheit bestehend aus Definitionsmenge, Bildmenge und
+einer Vorschrift, die jedem Element der Definitionsmenge genau ein Element der
+Bildmenge zuordnet.
+
+###Beispiele
+A = B = $\mathbb{R}$ und $f(x) = x^2$. Das Bild dieser Funktion ist die Menge
+$R_0^+$
+
+Eine Funktion ist nicht immer durch eine einzige Formel definiert:
+$f(n) = \begin{cases} n/2, & \mbox{if } n\mbox{ is even} \\ 3n+1, & \mbox{if
+} n\mbox{ is odd} \end{cases}$
+
+##Injektive, Surjektive und Bijektive Funktionen
+###Surjektiv - Rechtstotal
+Jedes Element der Zielmenge wird mindestens einmal als Funktionswert angenommen.
+
+###Injektiv - Linkseindeutig
+Jedes Element der Zielmenge wird höchstens einmal als Funktionswert angenommen.
+
+###Bijektiv
+Wenn die Funktion sowohl Injektiv als auch Surjektiv ist, ist eine Funktion
+Bijektiv.
+
+## Hintereinanderschaltung von Funktionen
+Falls $f: A \rightarrow B$ und $g: B \rightarrow C$ kann man die Abbildung
+$g \circ f: A \rightarrow C$
+$x \rightarrow g(f(x))$
+Dies nennt man Hintereinanderschaltung oder Komposition von f und g
+
+##Umkehrabbildung
+Ist eine Funktion bijektiv dann existiert zu jedem y $\in$ B genau ein x $\in$
+A mit $f(x) = y$
+Um die Umkehrabbildung zu erstellen muss man:
+1. Nach x aufösen
+2. x und y vertauschen
+Die Umkehr- oder inverse Abbildung von $f$ wird mit $f^1$

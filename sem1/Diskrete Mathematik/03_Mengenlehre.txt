@@ -1,0 +1,126 @@
+
+#Mengenlehre
+
+##Mengen und Elemente
+Aufzählende Form {a,b,c}
+
+Beschreibende Form: ${x \mid x \in \mathbb{N} \wedge  x \leq 10 } = {1,2,3 ...
+10}$
+
+Mächtigkeit: Anzahl Elemente in einer Menge
+
+Potenzmenge: Menge aller Teilmengen
+
+M= {a,b,c} ; P(M) = {{},{a},{b},{c},{a,b},{a,c},{b,c},{a,b,c}}
+
+|M| = n; |P(M)| = $2^n$
+{} $\subset$ A ; A $\subset$ A
+
+$A \cup B$ = { x | x $\in A \vee x \in B$ }
+
+$A \cap B$ = { x | x $\in A \wedge x \in B$ } Wenn $A \cap B$ = {} A,B disjunkt
+
+A \textbackslash B = { x | x $\in A \wedge x \notin B$ }
+
+$\mid A \cup B \cup C \mid = \mid A \mid + \mid B \mid + \mid C \mid - \mid
+A \cap B \mid - \mid A \cap C \mid - \mid B \cap C \mid + \mid A \cap B \cap
+C \mid$
+
+##Relationen
+
+A = {a,b} C = {x,y,z}
+
+A x B = {(a,b) | a $\in A, b \in B$}
+
+A x B = {(a,x), (a,y), (a,z), (b,x), (b,y), (b,z)}
+
+Eine Relation R auf A ist eine Teilmenge von AxA
+
+A = {1,2,3,4} , R = $\leq$
+
+R = {(1,1), (1,2), (1,3), (1,4), (2,2), (2,3), (2,4), (3,3), (3,4), (4,4)}
+
+###Eigenschaften von Relationen
+Reflexiv:
+$\begin{matrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{matrix}$ $I \subset R$ Diagonale alles 1 $\forall a \in A : aRa$
+
+Irreflexiv:
+$\begin{matrix}
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+1 & 1 & 0 & 0
+\end{matrix}$ $I \cap R = \emptyset$ Diagonale alles 0 $\forall a \in A : \neg
+aRa$
+
+Symetrisch:
+$\begin{matrix}
+1 & 1 & 0 & 1 \\
+1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 1
+\end{matrix}$ $R = R^{-1}$ Wenn A Relation B dann B Relation A $\forall a,b \in
+A : aRb \Rightarrow bRa$
+
+Antisymetrisch:
+$\begin{matrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1
+\end{matrix}$ $\forall a,b \in A : aRb \wedge bRa \Rightarrow a=b$
+
+Asymetrisch:
+$\begin{matrix}
+0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0
+\end{matrix}$ $\forall a,b \in A : aRb \Rightarrow \neg bRa$
+
+Transitiv:
+$\begin{matrix}
+0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0
+\end{matrix}  \circ 
+ \begin{matrix}
+0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0
+\end{matrix} = \begin{matrix}
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{matrix}$ $\forall a,b,c \in A : aRb \wedge bRc \Rightarrow aRc$ oder $R^2 \subset
+R$
+
+### Besondere Relationen
+Ordungsrelation wenn: reflexiv, Antisymetrisch, transitiv
+
+Ordnungsrelationen können mit einem Hasse-Diagramm dargestellt werden.
+
+### Hasse Diagramm Beispiel:
+\begin{tikzpicture}
+    \node (max) at (0,4) {$(1,1,1)$};
+    \node (a) at (-2,2) {$(0,1,1)$};
+    \node (b) at (0,2) {$(1,0,1)$};
+    \node (c) at (2,2) {$(1,1,0)$};
+    \node (d) at (-2,0) {$(0,0,1)$};
+    \node (e) at (0,0) {$(0,1,0)$};
+    \node (f) at (2,0) {$(1,0,0)$};
+    \node (min) at (0,-2) {$(0,0,0)$};
+    \draw (min) -- (d) -- (a) -- (max) -- (b) -- (f)
+    (e) -- (min) -- (f) --
+    (c) -- (max)
+    (d) --(b);
+    \draw[preaction={draw=white, -,line width=6pt}] (a) -- (e) -- (c);
+\end{tikzpicture}

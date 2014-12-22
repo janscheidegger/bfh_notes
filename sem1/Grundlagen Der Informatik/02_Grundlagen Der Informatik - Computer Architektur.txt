@@ -1,0 +1,153 @@
+
+#Computer Architektur
+* Transistor
+* Gates
+* Simple Circuits
+    * Mulitplexer
+    * Encoder
+* Complexe Circuits
+    * Computer
+    * Rechner
+
+## Transistor
+
+(Bild Emiter Basis Collector)
+(Bild Kennkurve)
+(Bild SchaltbildSymbol)
+
+## Gates
+
+### AND Gate
+(Bild der Schaltung)
+
+\begin{tabular}{ c  c | c  c  c  c  c }
+A & B & ( & A & $\&$ & B & )\\
+\hline 
+1 & 1 &  & 1 & \textcolor{red}{1} & 1 & \\
+1 & 0 &  & 1 & \textcolor{red}{0} & 0 & \\
+0 & 1 &  & 0 & \textcolor{red}{0} & 1 & \\
+0 & 0 &  & 0 & \textcolor{red}{0} & 0 & \\
+\end{tabular}
+
+### OR Gate
+Bild der Schaltung
+
+\begin{tabular}{ c  c | c  c  c  c  c }
+A & B & ( & A & $\lor$ & B & )\\
+\hline 
+1 & 1 &  & 1 & \textcolor{red}{1} & 1 & \\
+1 & 0 &  & 1 & \textcolor{red}{1} & 0 & \\
+0 & 1 &  & 0 & \textcolor{red}{1} & 1 & \\
+0 & 0 &  & 0 & \textcolor{red}{0} & 0 & \\
+\end{tabular}
+
+## Simple Circuits
+
+### Half Adder
+
+![Half Adder](img/halfAdder.png)
+
+\begin{tabular}{ c  c | c  c }
+A & B & Carry & Source \\
+\hline 
+0 & 0 &  0 & 0  \\
+0 & 1 &  0 & 1  \\
+1 & 0 &  0 & 1  \\
+1 & 1 &  0 & 0  \\
+\end{tabular}
+
+### Full Adder
+
+![Full Adder](img/fullAdder.jpg)
+
+\begin{tabular}{c c c | c c }
+A & B & $C_{IN}$ & $C_{OUT}$ & S \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0 \\
+1 & 0 & 0 & 0 & 1 \\
+1 & 0 & 1 & 1 & 0 \\
+1 & 1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{tabular}
+
+### Decoder
+
+![Decoder](img/decoder.jpg)
+
+\begin{tabular}{c c | c c c c}
+$S_0$ & $S_1$ & $O_0$ & $0_1$ & $O_2$ & $O_3$ \\
+\hline
+0 & 0 & 0 & 0 & 0 & $I_3$ \\
+0 & 1 & 0 & 0 & $I_2$ & 0 \\
+1 & 0 & 0 & $I_1$ & 0 & 0 \\
+1 & 1 & $I_0$ & 0 & 0 & 0 \\
+\end{tabular}
+
+### Multiplexer
+**2to1**
+
+![2to1 Multiplexer](img/2to1Multiplexer.png)
+
+\begin{tabular}{c | c }
+S & Z \\
+\hline
+0 & a \\
+1 & b \\
+\end{tabular}
+
+**4to1**
+
+![4to1 Multiplexer](img/4to1Multiplexer.png)
+
+\begin{tabular}{c c | c}
+$S_1$ & $S_2$ & Z \\
+\hline
+0 & 0 & a \\
+0 & 1 & b \\
+1 & 0 & c \\
+1 & 1 & d \\
+\end{tabular}
+
+## Mermory
+
+### RS-Flip-Flop
+
+
+![RS-Flip-Flop](img/rsFlipFlop.png)
+
+
+\begin{tabular}{c c | c c }
+R & S & Q & $\neg Q$ \\
+\hline
+0 & 0 & Q & $\neg Q$ \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 1 & Illegal & Illegal \\
+\end{tabular}
+
+### ROM (Read Only Memory)
+
+* EROM Erasable Rom
+* EEROM Electrical EROM
+* ...
+* Flash
+
+**Struktur**
+
+* Mit einem Adressbus n kann ein n Input einen $2^n$ Output erzeugen
+* Beim Beispiel Mem[3] wäre die 3 die Adresse
+* Speicherzelle = Speicher
+* 8 Bit Data - Read(4Bit Addr)
+* 2 Dimensionen
+    * Wo? Adresse
+    * Was? Daten
+
+### RAM (Random Access Memory)
+
+* 4x4 Bit
+* Addressraum
+* Adressbus = 2
+* x - write(2Bit addr, 4 Bit data)

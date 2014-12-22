@@ -1,0 +1,79 @@
+
+# Zahlen und Werte
+* Zahlen repräsentieren Werte
+    * Jass "Z"
+    * Römisch MM
+    * Basis 10 (Arabisch)
+      Positionelles System
+      $\sum\limits_{i=0}^n a_n\times10^i$
+    * Basis 2 (Binär)
+      Positionelles System
+      $\sum\limits_{i=0}^n a_n\times2^i$
+      $a_n \epsilon {0,1}$
+    * Basis 16 (Hexadexmial)
+      Positionelles System
+      $\sum\limits_{i=0}^n a_n\times16^i$
+      $a_n \epsilon {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}$
+      $A2_16$ -> Mathematik
+      0xA2 -> Informatik
+
+## Baseconversion
+![Conversion](img/convert.png)
+
+## Digitale Realität
+* Alles wird mit "Wörtern" aus {0,1} dargestellt
+* Fixe Wortbreite je nach Architektur
+    * 8 Bit
+    * 16 Bit
+    * 32 Bit
+    * 64 Bit
+
+### Beispiel Kilometerzähler (Addition mit "Bit abschneiden")
+9998 +1
+
+9999 +1
+
+0000 +1
+
+0001
+
+$a\oplus b:= a+b \pmod n^m$
+
+n => Basis
+
+m => Wortlänge
+
+### Einerkomplement K1 (Inversieren)
+$K_1(a_n...a_0) := \neg a_n...\neg a_0$
+
+* Beispiel: $K_1(101110) = 010001$
+
+### Zweierkompleent K2 (Negation)
+$K2(a_m ... a_0) := K_1(a_n...a_0)\oplus 1$
+
+* Beispiel: $K_2(0010111) = K_1(00101111)\oplus 1$
+                        = 11010000 $\oplus$ 1
+                        = 11010001
+
+### Der Zahlenkreis
+
+Das Carry-Bit zeigt einen Fehler bei unsigned Addition
+
+Das Overflow-Bit zeigt einen Fehler bei Signed Addition
+
+\begin{equation}
+\frac{
+    \begin{array}[b]{r}
+          \left( a_n a_{n-1}...a_1 a_0 \right)\\
+                + \left( b_n b_{n-1}...b_1 b_0 \right)
+                    \end{array}
+                      }{
+                          \left(c_{n+1} c_n c_{n-1}...c_1 c_0 \right)
+                            }
+                            \end{equation}
+                            
+* Carry-Flag: $c_{n+1}$
+* Overflow-Flag: $(\neg a_n\land\neg b_n\land c_n)\lor(a_n\land
+  b_n\land\neg c_n)$
+* Zero-Flag: $\neg(c_n\lor c_{n-1}...\lor c_0)$
+* Sign-Flag: $c_n$

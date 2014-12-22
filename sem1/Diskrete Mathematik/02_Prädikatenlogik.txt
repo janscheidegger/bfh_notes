@@ -1,0 +1,28 @@
+
+#Prädikatenlogik
+
+##Quantoren
+$\forall x \in M$ : x ist sterblich Für alle x in M gilt, x ist sterblich
+
+$\exists p \in P$ : p ist gerade Es existiert ein p in P das gerade ist.
+
+$\neg (\forall x P(x)) \Leftrightarrow \exists x \neg P(x)$
+
+$\neg (\exists x P(x)) \Leftrightarrow \forall x \neg P(x)$
+
+$\exists x (p(x) \wedge q(x)) \Leftrightarrow \neg \forall x (p(x) \rightarrow
+\neg q(x))$
+
+$\forall x (p(x) \rightarrow \neg q(x) \Leftrightarrow \exists x (p(x) \wedge
+\neg q(x))$
+
+Implikation: $\forall x (p(x) \rightarrow q(x))$
+
+Umkehrung: $\forall x (q(x) \rightarrow p(x))$
+
+Negation: $\exists x (p(x) \wedge \neg q(x))$
+
+Kontraposition: $\forall x (\neg q(x) \rightarrow \neg p(x))$
+
+Implikation $\Leftrightarrow$ Kontraposition
+

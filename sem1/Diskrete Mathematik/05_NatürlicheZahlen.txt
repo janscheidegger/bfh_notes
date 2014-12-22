@@ -1,0 +1,44 @@
+
+#Natürliche Zahlen
+
+##Die Axiome von Peano
+
+Die natürlichen Zahlen lassen sich mit Hilfe des Axiomensystems von Peano
+definieren:
+1. 1 $\in \mathbb{N}$
+2. Zu jeder natrürlichen Zahl $n \in \mathbb{N}$ existiert ein eindeutiger Nachfolger n+1
+3. für jedes $n \in \mathbb{N} gilt n^+ \neq 1.$
+4. Seien $m, n \in \mathbb{N}. Falls m^+ = n^+$ gilt ,dann is m=n.
+5. Jede Teilmenge K von $\mathbb{N}$, mit den Eigenschaften: $1 \in K$ und $k \in
+   K$ ist, dann ist auch $k^1 \in K$ Dann ist gleich $\mathbb{N}$
+
+##Das Prinzip der Vollständigen Induktion
+Schritte zum Beweis durch vollständige Induktion
+1. Induktionsanfang: Beweise, dass A(1) eine wahre Aussage ist.
+2. Voraussetzung: Die Aussage A(k) ist wahr für ein bestimmtes $k \in \mathbb{N}$
+3. Behauptung: Die Aussage A(k+1) ist wahr.
+4. Beweis: Beweise das unter Annahme der Voraussetzung die Behauptung wahr ist.
+
+##Primzahlen
+Eine natürliche Zahl $d \neq 0$ heisst ein Teiler einer natürlichen Zahl n, fals
+eine natürliche Zahl r existiert so das gilt n = d*r
+
+Eine natürliche Zahl p > 1 heisst Primzahl, falls 1 und p ihre einzigen Teiler
+sind.
+
+Jede natürliche Zahl ist eine Primzahl
+Beweis durch starke Induktion
+
+Verankerung: In diesem Fall erfolgt die Verankerung bei n = 2. Da 2 eine
+Primzahl ist, is P(2) richtig.
+Voraussetzung: Wir nehmen an dass $P(k)$ für alle k mit $2 \leq k \leq n$
+richtig ist.
+Behauptung: P(n+1)
+Falls n + 1 eine Primzahl ist, sind wir fertig. Wenn n+1 keine Primzahl
+ist, so gibt es einen Teiler d mit $2 \leq d \leq n$, so das gilt: $n+1 = d*r$
+Beweis: Sei $n \geq 2$ eine  natürliche Zahl und sei: $n = p_1*p_2...p_{k-1}*p_k=
+q_1*q_2...q_{m-1}*q_m$ 
+Durch Umformung und umnummerierung erhalten wir:
+$p_2...p_{k-1}*p_k=q_2...q_{m-1}*q_m$
+Dieser Schritt kann dan wiederholt werden bis gilt: m=k und $p_i = q_1$
+

@@ -1,0 +1,28 @@
+
+# CPU
+* Memory
+    * enthält Programminstruktionen
+    * enthält Plätze für Variablen
+* Instruction Pointer
+    * enthält Adresse der nächsten Instruktion
+    * Wird um Grösse der letzten Instruktion erhöht
+    * Wird bei Sprunkanweisungen neu gesetzt
+* Address Register
+    * enthält Adresse der zu holenden Instruktion
+    * der zu lesenden/schreibenden Daten
+* Instruktionregister
+    * enthält in der Phase fetch die nächste auszuführende Instruktion
+    * hat Kapazität um längste Anweisung aufzunehmen
+* Akkumulator
+    * speichert temporär Daten/Adressen
+    * speichert oft Herkunftsort/Ziel bei Arithmetischen Operationen
+    * Zugriff schneller als Zugriff auf Speicher
+* ALU
+    * Verbindung zu Registern
+    * Steuereingägne zur festelegung von Operationen
+    * Resultat wird an Zielregister weitergeleitet
+    * hält Flags für ControlUnit bereit Bsp: Carry, Overflow
+* ControlUnit
+    * steuert rozessor durch Gates
+    * holt und Interpretiert Instruktionen
+    * Bestimme Instruktionen erlauben Flags zu testen
