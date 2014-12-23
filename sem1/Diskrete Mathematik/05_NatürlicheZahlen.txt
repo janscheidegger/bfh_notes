@@ -68,8 +68,8 @@ Algorithmen mit denen man den ggT ohne eine Primzahlenzerlegung herleiten kann.
 
 ###Der Euklidische Algorithmus
 Der euklidische Algorithmus, wie er heutzutage verwendet wird, basiert auf der
-Division mit rest.
-Der euklidische Algorithmus benötigt höstens $2log_2(2b) Schritte um den ggT von
+Division mit Rest.
+Der euklidische Algorithmus benötigt höstens $2log_2(2b)$ Schritte um den ggT von
 (a,b) zu berechnen.
 Die beiden gegebenen Zahlen a und b wobei $b=r_0$
 $a=q_1 \cdot r_0 + r_1$
@@ -95,10 +95,10 @@ soll.
 3. Womit der ggT(1804,328) 164 ist.
 
 ###Der erweiterte euklidische Algorithmus
-Der erweiterte euklidische Algorithmus ist eine erweiterung des bereits
+Der erweiterte euklidische Algorithmus ist eine Erweiterung des bereits
 bekannten eukldischen Algorithmus und wird hauptsächlich dafür verwerndet das
 multiplikative inverse von Restklassen zu berechnen. Denn wenn das Tripel $(d
-= ggT(a,b),s,t) ermittelt, ist entweder $d=1$ und damit $1\equiv t\cdot b (mod
+= ggT(a,b),s,t)$ ermittelt, ist entweder $d=1$ und damit $1\equiv t\cdot b (mod
 a), t$ also das multiplikative INverse von $b$ modulo $a$, oder aber $d \neq q$,
 was bedeutet, dass $b$ module $a$ kein Inverses hat. Dies ist die Grundlage für
 Diophantische Gleicheungen oder allgemeiner von ganzzahliger linearer
