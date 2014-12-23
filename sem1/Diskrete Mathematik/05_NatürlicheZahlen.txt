@@ -5,6 +5,7 @@
 
 Die natürlichen Zahlen lassen sich mit Hilfe des Axiomensystems von Peano
 definieren:
+
 1. 1 $\in \mathbb{N}$
 2. Zu jeder natrürlichen Zahl $n \in \mathbb{N}$ existiert ein eindeutiger Nachfolger n+1
 3. für jedes $n \in \mathbb{N} gilt n^+ \neq 1.$
@@ -14,6 +15,7 @@ definieren:
 
 ##Das Prinzip der Vollständigen Induktion
 Schritte zum Beweis durch vollständige Induktion
+
 1. Induktionsanfang: Beweise, dass A(1) eine wahre Aussage ist.
 2. Voraussetzung: Die Aussage A(k) ist wahr für ein bestimmtes $k \in \mathbb{N}$
 3. Behauptung: Die Aussage A(k+1) ist wahr.
@@ -31,14 +33,78 @@ Beweis durch starke Induktion
 
 Verankerung: In diesem Fall erfolgt die Verankerung bei n = 2. Da 2 eine
 Primzahl ist, is P(2) richtig.
+
 Voraussetzung: Wir nehmen an dass $P(k)$ für alle k mit $2 \leq k \leq n$
 richtig ist.
+
 Behauptung: P(n+1)
 Falls n + 1 eine Primzahl ist, sind wir fertig. Wenn n+1 keine Primzahl
 ist, so gibt es einen Teiler d mit $2 \leq d \leq n$, so das gilt: $n+1 = d*r$
+
 Beweis: Sei $n \geq 2$ eine  natürliche Zahl und sei: $n = p_1*p_2...p_{k-1}*p_k=
 q_1*q_2...q_{m-1}*q_m$ 
 Durch Umformung und umnummerierung erhalten wir:
 $p_2...p_{k-1}*p_k=q_2...q_{m-1}*q_m$
 Dieser Schritt kann dan wiederholt werden bis gilt: m=k und $p_i = q_1$
 
+###Sieb des Erastotenes
+Das Verfahren beruht auf dem Streichen von Zahlen.
+
+1. Wir schreiben alle Zahlen von 1 bis N auf.
+2. Wir streichen 1
+3. Wir streichen 2 und alle Vielfachen von 2 ab dem Quadrat also von 4 - N
+4. 3 ist die nächste Primzahl. Wir streichen wieder alle Vielfachen ab dem Quadrat.
+5. Die nächste freie Zahl ist die nächste Primzahl. (In dem Fall die 5)
+6. diese Schritte werden dann stetig wiederholt.
+
+##Der grösste gemeinsame Teiler (ggt)
+Der grösste gemeinsame Teiler von zwei Zahlen a und b. a und b haben nur endlich
+viele Teiler. Damit kann es auch nur endlich viele gemeinsame Teiler geben.
+Anderseits ist die Menge nie leer, denn sie enthält stets mindestens das Element
+1. Aus diesen überlegungen folgt, dass dei Menge der gemeinsamen Teiler von
+   a und b, ein grösstes gemeinsames Element besitzt. Geschrieben ggT(a,b).
+Die Bestimmung durch Primzahlenzerlegung ist sehr aufwendig, es gibt aber
+Algorithmen mit denen man den ggT ohne eine Primzahlenzerlegung herleiten kann.
+
+###Der Euklidische Algorithmus
+Der euklidische Algorithmus, wie er heutzutage verwendet wird, basiert auf der
+Division mit rest.
+Der euklidische Algorithmus benötigt höstens $2log_2(2b) Schritte um den ggT von
+(a,b) zu berechnen.
+Die beiden gegebenen Zahlen a und b wobei $b=r_0$
+$a=q_1 \cdot r_0 + r_1$
+Hierbei ist $q_1$ Das Ergebnis der Division von $a$ und $b$, bzw $r_0$.
+
+$r_0$ ist b, $r_1$ der Rest aus der Division von $a$ und $b$, bzw $r_0$
+
+im nächsten Schritt folgt nun:
+$r_0 = q_2 \cdot r_1 + r_2$
+
+Hier wurden die selben Schritte wie oben durchgeführt, wobei nun $r_0$ durch
+$r_1$ dividiert wurde. q ist wieder das ergebnis der Division und $r_2$ der Rest.
+
+Diese Schritte werden dann durchgeführt, bis der Rest 0 entsteht. Dann ist $r_n$
+der ggT.
+$r_{n-1} = q_{n+1} \cdot r_n + 0$
+
+Beispiel: Gegeben sind die Zahlen 1804 und 328 von denen der ggt bestimmt weden
+soll.
+
+1. $1804 = 5 \cdot 328 + 164$
+2. $328 = 2 \cdot 164 + 0$
+3. Womit der ggT(1804,328) 164 ist.
+
+###Der erweiterte euklidische Algorithmus
+Der erweiterte euklidische Algorithmus ist eine erweiterung des bereits
+bekannten eukldischen Algorithmus und wird hauptsächlich dafür verwerndet das
+multiplikative inverse von Restklassen zu berechnen. Denn wenn das Tripel $(d
+= ggT(a,b),s,t) ermittelt, ist entweder $d=1$ und damit $1\equiv t\cdot b (mod
+a), t$ also das multiplikative INverse von $b$ modulo $a$, oder aber $d \neq q$,
+was bedeutet, dass $b$ module $a$ kein Inverses hat. Dies ist die Grundlage für
+Diophantische Gleicheungen oder allgemeiner von ganzzahliger linearer
+Gleichungssystemen.
+In der Gleichung $d=xa + yb$ mit ggT(a,b) = d sollen die Faktoren x und
+y bestimmt werden.
+Behauptungen:
+$r_n=ggT(a,b)$
+$r_n=ax_n + by_n$
