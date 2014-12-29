@@ -339,8 +339,8 @@ Algorithmen mit denen man den ggT ohne eine Primzahlenzerlegung herleiten kann.
 
 ###Der Euklidische Algorithmus
 Der euklidische Algorithmus, wie er heutzutage verwendet wird, basiert auf der
-Division mit rest.
-Der euklidische Algorithmus benötigt höstens $2log_2(2b) Schritte um den ggT von
+Division mit Rest.
+Der euklidische Algorithmus benötigt höstens $2log_2(2b)$ Schritte um den ggT von
 (a,b) zu berechnen.
 Die beiden gegebenen Zahlen a und b wobei $b=r_0$
 $a=q_1 \cdot r_0 + r_1$
@@ -366,10 +366,10 @@ soll.
 3. Womit der ggT(1804,328) 164 ist.
 
 ###Der erweiterte euklidische Algorithmus
-Der erweiterte euklidische Algorithmus ist eine erweiterung des bereits
+Der erweiterte euklidische Algorithmus ist eine Erweiterung des bereits
 bekannten eukldischen Algorithmus und wird hauptsächlich dafür verwerndet das
 multiplikative inverse von Restklassen zu berechnen. Denn wenn das Tripel $(d
-= ggT(a,b),s,t) ermittelt, ist entweder $d=1$ und damit $1\equiv t\cdot b (mod
+= ggT(a,b),s,t)$ ermittelt, ist entweder $d=1$ und damit $1\equiv t\cdot b (mod
 a), t$ also das multiplikative INverse von $b$ modulo $a$, oder aber $d \neq q$,
 was bedeutet, dass $b$ module $a$ kein Inverses hat. Dies ist die Grundlage für
 Diophantische Gleicheungen oder allgemeiner von ganzzahliger linearer
@@ -399,7 +399,23 @@ als Linearkombination dieser beiden Zahlen zu darzustellen.
 4. $\rightarrow 4 \cdot 1844 - 295 \cdot 25 = 1$
 
 ###Berlekamp Algorithmus
+TODO: Fragen!!
 
+Der Berlekamp funktioniert wie der Euklid, jedoch werden die Resultate
+nebeneinander geschrieben. Danach wird von hinten (ggT) wieder zurück gerechnet.
+
+also ggT (8,5)
+
+ 1 1 1 1
+
+8 5 3 2 1
+
+5 3 2 1 1
+
+$8\cdot (-3)+5\cdot 5 = 1$
+
+Die Resultate wurden also über Kreuz genommen, dies geht im gegensatz zum Euklid
+schneller, jedoch kriegt man nicht immer das "kleinst" Mögliche Resultat.
 
 ###Lineare diophantische Gleichungen
 Bereits beim erweiterten euklidischen Algorithmus wurde die diophantische
@@ -434,3 +450,134 @@ Wie findet man alle Lösungen, wenn man eine Lösung ($x_0, y_0$) gefunden hat?
 Antwort: $x=x_0+ k \cdot \frac{b}{ggT(a,b)}$
 
 $y=y_0+k \cdot \frac{a}{ggT(a,b)}$
+
+##Kongruenz
+
+###Kongruenz
+Für natürlich Zahlen gilt: eine ganze Zahl $a \neq 0$ heisst Teiler einer ganzen
+Zahl b, wenn eine ganze Zahl c existiert so dass $b = a \cdot c$
+
+Gegeben ist eine natürliche Zahl m. Zwei ganze Zahlen a und b heissen kongruent
+module m, geschrieben $a \equiv b (mod\; m)$
+Falls m die Zahl a-b teilt.
+
+Beispiel:
+
+$2 \equiv 7 \; mod \; 5$
+
+Denn 2 / 5 = 0 Rest 2 und 7 / 5 = 1 Rest 2. Die Reste sind gleich!
+
+Dadurch können hohe Rechnungen vereinfacht werden.
+
+$5^10 mod 5$
+
+1. $5^2 = 25 \equiv 5\; mod \; 5$
+2. $5^4 = 5^2 \cdot 5^2 \equiv 5 \cdot 5 \; mod \; 5 \equiv 5 \; mod \; 5$
+3. $5^10 = 5^2 \cdot 5^4 \cdot 5^4 \equiv 5 \cdot 5 \cdot 5 \; mod \; 5 \equiv
+   5 \; mod \; 5$ 
+
+###Formeln
+Es gilt: wem x, y, u v ganze Zahlen sind und m eine natürliche Zahl:
+
+Wenn $x \equiv y (mod \; m)$ und $u \equiv v (mod \; m)$ dann:
+
+$x + u \equiv y + v (mod \; m)$ und $x \cdot u \equiv y \cdot v (mod \; m)$
+
+
+###multiplikatives Inverses
+Wenn ggT(a, m) = 1, dann existiert eine ganze Zahl b für die gilt:
+$a\cdot b \equiv 1\; mod\; m$
+
+Das multiplikative Inverse von a modulo m ist bis auf ein Vielfaches von
+m bestimmt, wenn wir verlangen, dass b zwischen  0 und m sein
+soll, dann ist b eindeutig bestimmt.
+
+###Berechnen des multiplikativen Inversen
+Wegen ggT(a, m) = 1 existieren ganze Zahlen x und y, so das gilt:
+
+$1 = x \cdot a + y \cdot m$
+Daraus folgt:
+
+$x \cdot a \equiv 1 \; mod \; m$
+
+Also ist x ein multiplikatives Inverses von a module m.
+
+###Der kleine fermatsche Satz
+p ist eine Primzahl und a eine natürliche Zahl mit p teilt nicht a. Dann gilt:
+$a^{p-1} \equiv 1 \; mod \; p$
+
+###Die eulersche Funktion
+Die eulersche Funktion $\Phi (n)$ (n ist eine natürliche Zahl) liefert die
+Anzahl der Zahlen die teilerfremd zu n sind)
+
+Beispiel: $\Phi (15)$ von den 15 Zahlen:
+
+**1** **2** 3 **4** 5 6 **7** **8** 9 **10** **11** 12 **13** **14** 15
+
+sind 8 Teilerfremd zu 15 also $\Phi (15) = 8$
+
+Falls p eine Primzahl ist, dann gilt : $\Phi (p) = p-1$
+
+Falls p und q zwei Primzahlen sind, dann gilt: $\Phi (pq) = (p-1)(q-1)$
+
+Es gilt: $a^{\Phi (m)} \equiv 1 \; mod \; m$ Wenn m eine Primzahl ist, gilt
+also wieder der kleine Zahl von Fermat
+
+### Der Chinesische Restsatz
+
+![Chinesischer Restsatz](img/chinesischerRestsatz.png)
+
+### Square and Multiply Algorithmus
+
+1. $x \equiv a^b(mod \; m)$
+2. b = binäre Darstellung des exponenten
+3. für alle zahlen der binären Darstellung ausser der ersten S -> wenn 0 SM wenn
+   1
+4. x = sma(a) mit S=Quadrieren SM = Quadrieren und Multiplizieren mit a mod(m)
+
+Beispiel: $x \equiv 3^{13}(mod \; 11)$
+
+1. $b = (1101)_2$
+2. sma = SM S SM (101)
+3. $3 \rightarrow 9 \rightarrow 27 \equiv 5 \rightarrow 25 \equiv 3 \rightarrow
+   9 \rightarrow 27 \equiv 5(mod \; 11)$
+
+### Primitivwurzeln
+Die Zahl 3 ist eine Primitivwurzel von 7 da gilt:
+
+* $3^1 \equiv 3 (mod \; 7)$
+* $3^2 \equiv 2 (mod \; 7)$
+* $3^3 \equiv 6 (mod \; 7)$
+* $3^4 \equiv 4 (mod \; 7)$
+* $3^5 \equiv 5 (mod \; 7)$
+* $3^6 \equiv 1 (mod \; 7)$
+
+Es lasen sich also alle Elemente der primen Restklassengruppe modulo 7 als
+Potenzen von 3 darstellen. 2 wäre keine Primitivwurzel von 7 da sich die Reste
+wiederholen.
+
+Die Anzahl der Primitivwurzeln ist $\Phi (p-1) = \Phi (\Phi (p))$
+
+###Diskreter Logarithmus
+Den diskreten Logarithmus erklärt man am besten an einem Beispiel.
+Beispiel: Primzahl p = 11 Primitivwurzel = 2
+
+* $2^0 = 1 \equiv 1 \; mod \; 11$
+* $2^1 = 2 \equiv 2 \; mod \; 11$
+* $2^2 = 4 \equiv 4 \; mod \; 11$
+* $2^3 = 8 \equiv 8 \; mod \; 11$
+* $2^4 = 16 \equiv 5 \; mod \; 11$
+* $2^5 = 32 \equiv 10 \; mod \; 11$
+* $2^6 = 64 \equiv 9 \; mod \; 11$
+* $2^7 = 128 \equiv 7 \; mod \; 11$
+* $2^8 = 256 \equiv 3 \; mod \; 11$
+* $2^9 = 512 \equiv 6 \; mod \; 11$
+
+\begin{table}[h]
+\begin{tabular}{lllllllllll}
+a      & 0 & 1 & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 \\
+$2^a\equiv x\; mod 7$ & 1 & 2 & 4 & 8 & 5 & 10 & 9 & 7 & 3 & 6
+\end{tabular}
+\end{table}
+
+### Zahletheoritische Wurzeln

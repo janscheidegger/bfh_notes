@@ -132,8 +132,7 @@ Durch umsortieren erreicht man nun den diskreten Logarithmus
 \begin{table}[h]
 \begin{tabular}{lllllllllll}
 x      & 1 & 2 & 3 & 4 & 5  & 6 & 7 & 8 & 9 & 10\\
-$log_2x$ & 0 & 1 & 8 & 2 & 4 & 9 & 7 & 3 & 6 & 5
-\end{tabular}
+$log_2x$ & 0 & 1 & 8 & 2 & 4 & 9 & 7 & 3 & 6 & 5 \end{tabular}
 \end{table}
 
 
