@@ -383,3 +383,228 @@ Dieser Modus wird nur mit dem Y-Register verwendet. Vorgang (Y=#$10):
 2. Speicher in Adresse 0020 wird gelesen: 0020 43 56
 3. Y wird zum Resultat Addiert
 4. Register A wird mit den Daten aus $5653 befüllt
+
+## Conditional Jumps
+Conditional Jumps(if-Verzweigungen) werden auf einem 6502 durch das sogenannte
+Branching erreicht. Wenn zwei Werte miteinander verglichen werden sollen (CMP)
+dann werden diese 2 Werte von einander Subtrahiert und anschliessend die Flags
+gesetzt.
+
+Aufgrund der verschiedenen Flags kann dann mit Branch-Instruktionen "gesprungen"
+werden.
+
+TODO: Fragen bei signed => Overflow Flag wird bei CMP Instruktion laut Opcode
+Table nicht gesetzt, jedoch laut Tabelle in Notizen verwendet!
+
+\begin{table}[h]
+\begin{tabular}{lll}
+\hline
+A/B    & unsigned A-B & signed A-B         \\ \hline
+A = B  & Z            & Z                  \\
+A != B & !Z           & !Z                 \\
+A < B  & C            & S XOR O            \\
+A <= B & C OR Z       & (S XOR O) OR Z     \\
+A > B  & NOT(C OR Z)  & NOT(S XOR O) OR Z) \\
+A >= B & NOT C        & NOT(X OR O)       
+\end{tabular}
+\end{table}
+
+#C-Programmierung
+##Aufbau des Speichers
+Der Speicher des Computers, welcher bei C verwendet wird, ist sehr simpel
+aufgebaut. Sämtlicher Code befindet sich während der Ausführung im RAM. Wird
+während der Ausführung des Programmes weiterer Speicher benötigt wird der frei
+benutzbare Speicher auf dem HEAP mt "malloc" reserviert (Dieser Speicher kann
+anschliessend mit free() wieder freigegeben werden).
+
+Wird von einer Funktion eine Variable angelegt. Beispiel: int age = 5; so wird
+diese nur auf dem Stack angelegt, da die gültigkeit nur in der jeweiligen
+Funktion ist. Wird anschliessen wieder aus der Funktion gesprungen, ist der Wert
+age "verloren" und der Speicher auf dem Stack wieder weg. Der Speicher auf dem
+Stack ist hingegen zum Speicher auf dem Heap sehr begrenzt. Deswegen sollten
+grössere Mengen von Daten wenn möglich nicht auf dem Stack gespeichert werden.
+
+![StackHeap](img/stackHeap.png)
+
+##Left-Value - Right-Value (L-Value/R-Value)
+L-Value - Steht Links vom assignment
+R-Value - Steht Rechts vom assignment
+
+Beispiel:
+
+* int arr[5];
+* int *ip;
+* ip = &(arr[0]);
+* ip = &(arr);
+* ip = arr;
+* !!NICHT arr= ip!!
+
+L-Values: ip
+R-Values: ip und arr
+
+##Structs
+Ein Struct ist eine Zusammenfassung von meherer Variablen.
+
+Beispiel:
+\begin{verbatim}
+struct person {
+    char* nameptr;
+    int age;
+};
+\end{verbatim}
+
+Solange ein Struct nicht verwendet wurde, hat es keine Werte zugeordnet und
+verbraucht dementsprechend keinen Speicher auf Stack oder Heap, sobald ein
+struct erzeugt wird, wird auch Speicher verwendet. Dieser Speicher entspricht
+der grösse der enhaltenen Elemente.
+
+Wichtig:
+
+* Pointer haben auch eine grösse: Nämlich die Adressbreite (OS-Abhängig)
+* Ein Struct kann auf dem Speicher Alligned werden, dh. 2 int(16 Bit) und
+  1 char(8 Bit/ 1Byte) heisst das das sizeof(struct bla) => 3*16 Bit NICHT 2*16
+  + 1*8 Bit.
+
+##Pointer und Referenzen
+Ein Pointer ist ein Zeiger, der auf einen bestimmten Ort im Speicher zeigt.
+Pointer werden in C mit einem * deklariert: Beispiel int *pointer;
+
+Um diesem int Pointer nun ein Adresse zuzweisen, muss zuerst ein int wert
+existieren: Beispiel int zahl = 5;
+
+Dieser Wert kann nun dem Pointer zugeordnet werden mit: pointer = &(zahl);
+
+Hiermit hat Pointer nun der Wert der Adresse von zahl gespeichert. Mit dem
+& Operator wird die Adresse ausgegeben.
+
+Um die Zahl des Pointers nun direkt ändern zu können, muss dieser erst noch
+derefernziert werden. Beispiel: *(pointer) = 99;
+
+Bei einem Pointer auf ein struct kann dieses ebenfalls mit dem -> Operator
+derefernziert werden. Beispiel:
+
+\begin{verbatim}
+struct person {
+    int age;
+};
+
+struct person hans;
+hans.age = 15;
+
+struct person *structPointer = &(hans); //StructPointer zeigt auf hans
+structPointer->age= 16; //Auch möglich : *(structPointer).age;
+
+struct person *secondPointer = malloc(sizeof(struct person));
+// JETZT kann man mit dem Pointer arbeiten, ohne speicher zu reservieren, wäre
+dies nicht möglich gewesen.
+
+\end{verbatim}
+
+##Pointer Arithmetik
+Bei einem Array: int arr[3];
+
+Und einem Pointer: int *arrPointer = arr;
+
+Gilt nun (der C Compiler erkennt automatisch die Grösse int, deswegen muss man
+nicht + x*(sizeof(int)) machen) Alle Punkte sind unabhängig zu betrachten!!.
+
+* arr[0] == *arrPointer;
+* arr[1] == *(++arrPointer);
+* arr[2] == *(arrPointer + 2)
+* &(arr[0]) == arr
+
+
+##Komplexe Deklarationen
+int *a[10] -> a is an array of[10] Pointers to int (a[] bindet stärker als *a)
+
+int (*a)[10] -> a is a pointer to an array of [10] int
+
+int (*a)(int) -> a is a pointer to a function with parameters (int) returning int
+
+See Operator precedence!!!!!!!
+
+##Linked Lists (Beispiel)
+###Build123 List
+\begin{verbatim}
+struct node {
+    int data;
+    struct node *next;
+}
+
+struct node build123() {
+    struct node *head;
+    struct node *second;
+    struct node *third;
+
+    head = malloc(struct node);
+    second = malloc(struct node);
+    third = malloc(struct node);
+
+    head->data = 1;
+    (*second).data = 2;
+    third->data = 3;
+
+    head->next = second;
+    second->next = third;
+    third->next = NULL;
+
+    return head;
+}
+\end{verbatim}
+
+###Push Data to List
+\begin{verbatim}
+void push( struct node ** listRef, int data) {
+    struct node* new; // neuer node
+    new = malloc(struct node); // speicher reservieren
+    new->data = data; // data setzen
+    new->next = (*listRef); //dem neuen Element wird das "alte" erste als next
+    gesetzt
+    (*listRef) = new; //das neue Element ist nun der "Head" der Liste!
+}
+
+push(&list, 12);
+\end{verbatim}
+
+###get nth
+\begin{verbatim}
+int getNth(struct node *list, int index) {
+    int count = 0;
+    struct node *current = list;
+    while(current != NULL) {
+        if(count == index) return current->data;
+        count++;
+        current=current->next;
+    }
+    assert(0); //Wenn hier dann schleeecht! Weil kein Element mit dem Index
+    vorhanden war => error!
+}
+int data = getNth(list, 3);
+\end{verbatim}
+
+###pop from List
+\begin{verbatim}
+void deleteList(struct node **listRef) {
+    int value;
+    struct node *first = (*listRef);
+    (*listRef) = first->next;
+    value = first->data;
+    free(frist); //Wichtig Speicher freigeben nach dem entfernen von der Liste!!
+    return value;
+}
+int data = pop(&list);
+\end{verbatim}
+
+###delete List
+\begin{verbatim}
+void deleteList(strut node **listRef) {
+    struct node* durrent = *listRef;
+    struct node *next;
+    while(current != NULL) {
+       next = current->next;
+       free(current); // DELETE !!
+       current = next;
+    }
+    (*listRef) = NULL; //Set Reference to NULL = LIST GONE!
+}
+\end{verbatim}

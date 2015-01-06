@@ -58,6 +58,10 @@ $a^{p-1} \equiv 1 \; mod \; p$
 Die eulersche Funktion $\Phi (n)$ (n ist eine natürliche Zahl) liefert die
 Anzahl der Zahlen die teilerfremd zu n sind)
 
+Phi berechnet sich wie folgt: $\Phi(10) = 10\cdot (1-1/2)\cdot (1-1/5)$
+
+Zahl*(1/1. Primfaktor)*(1/2. Primfaktor) ... (1/xte Primfaktor)
+
 Beispiel: $\Phi (15)$ von den 15 Zahlen:
 
 **1** **2** 3 **4** 5 6 **7** **8** 9 **10** **11** 12 **13** **14** 15
