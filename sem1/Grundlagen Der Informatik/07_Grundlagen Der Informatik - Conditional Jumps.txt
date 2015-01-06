@@ -1,0 +1,25 @@
+
+## Conditional Jumps
+Conditional Jumps(if-Verzweigungen) werden auf einem 6502 durch das sogenannte
+Branching erreicht. Wenn zwei Werte miteinander verglichen werden sollen (CMP)
+dann werden diese 2 Werte von einander Subtrahiert und anschliessend die Flags
+gesetzt.
+
+Aufgrund der verschiedenen Flags kann dann mit Branch-Instruktionen "gesprungen"
+werden.
+
+TODO: Fragen bei signed => Overflow Flag wird bei CMP Instruktion laut Opcode
+Table nicht gesetzt, jedoch laut Tabelle in Notizen verwendet!
+
+\begin{table}[h]
+\begin{tabular}{lll}
+\hline
+A/B    & unsigned A-B & signed A-B         \\ \hline
+A = B  & Z            & Z                  \\
+A != B & !Z           & !Z                 \\
+A < B  & C            & S XOR O            \\
+A <= B & C OR Z       & (S XOR O) OR Z     \\
+A > B  & NOT(C OR Z)  & NOT(S XOR O) OR Z) \\
+A >= B & NOT C        & NOT(X OR O)       
+\end{tabular}
+\end{table}
