@@ -1,0 +1,53 @@
+
+# Lineare Algebra
+
+## Einführung Vektoren
+
+Definition: Ein Vektor ist eine Verschiebung, die mit einem Pfeil bezeichnet
+wird.
+
+Definition: Zwei Vektoren sind gleich, wenn sie die selbe Verschiebung
+beschreiben.
+
+Vektoren sind nicht Ortsabhängig. Beispiel: $\vec{r}$ oder $\vec{s}$
+
+Vektoren sind eine Äquivalenzrelation: da, $\vec{r} = \vec{s}$, $\vec{r}
+= \vec{r}$ und $\vec{s} = \vec{t} \leftarrow \vec{r} = \vec{t}$. Also symetrisch,
+reflexiv und transitiv sind.
+
+## Vektoroperationen
+
+### Addition
+$\vec{a} + \vec{b}$
+
+### Subtraktion
+$\vec{a} - \vec{b} = \vec{a} + (-\vec{b})$
+
+### Skalare Multiplikation
+$\mathbb{R} \dot Vec \Rightarrow Vec$
+
+$\vec{x} = \lambda \vec{y}$
+wobei $\lambda$ eine reele Zahl ist.
+
+* Wenn $\lambda > 0$ Richtung bleibt erhalten
+* Wenn $\lambda < 0$ Richtung wird umgekehrt
+* Wenn $\lambda = 0$ Keine Richtung
+
+### Skalar Produkt/Dot Product
+$Vector \dot  Vector \Rightarrow \mathbb{R}$
+
+$\vec{a} \dot \vec{b} \Rightarrow |\vec{a}| \dot \vec{b} \dot cos\alpha$
+
+### Vektorprodukt/Cross Product
+Vector $\times$ Vector $\Rightarrow \mathbb{R}$
+
+$|\vec{a} \times \vec{b}| \Rightarrow |\vec{a}| \dot \vec{b} \dot sin\alpha$
+**Nur im 3D Raum!**
+
+## Norm/Länge
+$|\vec{a}|$ ist die Norm eines Vektors, bzw die Länge.
+
+Berechnung: $\sqrt{a_1^2 + a_2^2}$
+
+## Normierung eines Vektors auf 1
+$\vec{e}_{\vec{a}} = \frac{\vec{a}}{|\vec{a}|}$
