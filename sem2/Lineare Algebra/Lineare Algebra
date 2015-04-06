@@ -15,6 +15,108 @@ Vektoren sind eine Äquivalenzrelation: da, $\vec{r} = \vec{s}$, $\vec{r}
 = \vec{r}$ und $\vec{s} = \vec{t} \leftarrow \vec{r} = \vec{t}$. Also symetrisch,
 reflexiv und transitiv sind.
 
+## Darstellung von Vektoren
+
+### Gerade Parameterform
+Eine Gerade wird dazu in zwei Teile zerlegt.
+
+* Einen Punkt um die Position der Geraden zu bestimmen: Den Stützvektor
+* Einen Vektor der vom Festgelegten PUnkt die Richtung der Geraden beschreibt:
+  Der Richtungsvektor
+
+Gegeben sind zwei Punkte auf der Geraden a und b.
+
+Berechnung: $\vec{b} + \lambda \cdot (\vec{a} - \vec{b})$
+
+### Ebene Parameterform
+Um eine Ebene in der Parameterform darzustellen sind 3 Vektoren Notwendig:
+
+* Einen Stützvektor
+* Zwei Richtungsvektoren die nicht Linear Abhängig sind.
+
+Gegeben sind 3 Punkte auf der Ebene a, b, c
+
+Berechnung: $\vec{b} + \lambda \cdot (\vec{a} - \vec{b}) + \mu \cdot (\vec{c}
+- \vec{b})$
+
+### Ebene Normalenvektor
+Der Normalenvektor ist derjenige Vektor, der senkrecht zur Ebene liegt. Da der
+Normalenvektor orthagonal zur Ebene liegt, zählt einzig die Richtung. Die Länge
+ist meist irrelevant.
+
+Der Normalenvektor wird gewönlich mit $\vec{n}$ abekürzt
+
+Um einen Normalenvektor in einer Ebene zu bilden, muss man das Vektorprodukt
+anwenden:
+
+$\Sigma: \vec{x} = \vec{s} + \lambda \cdot \vec{r_1} + \mu \cdot \vec{r_2}$
+
+$\vec{n} = \vec{r_1} \times \vec{r_2}$
+
+### Ebene Normalenform
+Um die Normalenform zu bilden sind 3 Vektoren notwendig:
+
+* $\vec{p}$ ein bereits definierter Punkt in der Ebene.
+* $\vec{x}$ ein beliebiger Punkt auf der Ebene.
+* $\vec{n}$ der Normalenvektor der Ebene
+
+Berechnung: $\Sigma: [\vec{x} - \vec{p}] \cdot \vec{n} = 0$
+
+Der sich ergebenede Vektor aus $\vec{x}$ und $\vec{p}$ muss hierbei
+mulitpliziert mit $\vec{n}$ 0 ergeben, da Orthagonalität gegeben ist.
+
+### Ebene Koordinatenform
+Die Koordinatenform ist nichts anderes als die ausmultiplizierte Version der
+Normalform. Die Koordinatenform hat den Vorteil das man mit ihr innerhalb von
+kürzester Zeit ausrechnen kann ob ein Punkt auf der Ebene liegt. Notwendig für
+die Berechnung der Koordinatenform sind:
+
+* Ein Vektor $\vec{x}$ auf der Ebene
+* Der Normalenvektor $\vec{n}$
+
+$\Sigma: n_1 \cdot x_1 + n_2 \cdot x_2 +n_3 \cdot x_3 = d$
+
+Dabei sind n1, n2, n3 die einzelnen Komponenten des Vektors $\vec{n}$
+d gibt Hinweis auf den Abstand der Ebene vom Ursprung. Der Abstand der Ebene vom
+Ursprung ist: $d / \vec{n}$
+
+#### Koordinatenform aus Normalform
+
+Normalenform: $$\Sigma:[\vec{x} - \begin{pmatrix}
+6\\
+7\\
+8\\
+\end{pmatrix}
+] \cdot \begin{pmatrix}
+1\\
+-2\\
+4\\
+\end{pmatrix} = 0$$
+
+Die Koordinatenform erhält man nun durch ausmultiplizieren
+
+$\Sigma: 1 \cdot x_1 + (-2) \cdot x_2 + 4 \cdot x_3 - (1 \cdot 6 + (-2) \cdot
+7 + 4 \cdot 8) = 0$
+
+$x_1 - 2x_2 + 4x_3 - 24 = 0$
+
+$x_1 - 2x_2 + 4x_3 = 24$
+
+###Hessesche Normalenform (HNF)
+
+Die Hessesche Normalenfor (HNF) ist nahezu identisch zur Koordinatenform. Die
+HNF wird ausschliesslich zur Berechnung von Abständen benötigt. Setzt man einen
+Punkt in die HNF ein erählt man den Abstand dieses Punktes zur Ebene
+
+$HNF: |\frac{n_1 \cdot x_1 + n_2 \cdot x_2 + n_3 \cdot x_3
+- d}{\sqrt{n_1^2+n_2^2+n_3^2}}| = a$
+
+Der Vorgang von der Koordinatenform zur HNF in Schritten:
+
+1. d rüberbringen
+2. durch die Länge der Normalenvektors teilen
+3. Betragsstriche setzen und = a schreiben
+
 ## Vektoroperationen
 
 ### Addition
@@ -44,6 +146,15 @@ Vector $\times$ Vector $\Rightarrow \mathbb{R}$
 $|\vec{a} \times \vec{b}| \Rightarrow |\vec{a}| \cdot \vec{b} \cdot sin\alpha$
 **Nur im 3D Raum!**
 
+Berechnung: 
+$$ \vec{a} \times \vec{b} = 
+\begin{pmatrix}
+a_2 \cdot b_3 - a_2 \cdot b_2\\
+a_3 \cdot b_1 - a_1 \cdot b_3\\
+a_1 \cdot b_2 - a_3 \cdot b_1\\
+\end{pmatrix}
+$$
+
 ## Norm/Länge
 $|\vec{a}|$ ist die Norm eines Vektors, bzw die Länge.
 
@@ -51,3 +162,49 @@ Berechnung: $\sqrt{a_1^2 + a_2^2}$
 
 ## Normierung eines Vektors auf 1
 $\vec{e}_{\vec{a}} = \frac{\vec{a}}{|\vec{a}|}$
+
+## Winkel
+
+### Winkel zwischen Vektor und Vektor
+$cos \varphi = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}$
+
+### Winkel zwischen Vektor und Geraden
+Um den Winkel zwischen VEktor und Geraden zu berechnen muss man nur den gegeben
+Vektor und den Richtungsvektor der Geraden verwenden. Dann ist das Verfahren
+gemäss Vektor und Vektor
+
+### Winkel zwischen Vektor und Ebene
+Funktioniert wie Gerade und Ebene lediglich mit dem Vektor statt dem
+Richungsvektor.
+
+### Winkel zwischen Gerade und Gerade
+Das selbe Vorgehen wie bei zwei Vektoren, lediglich mit den Richtungsvektoren.
+
+### Winkel zwischen Gerade und Ebene
+um den Winkel zwischen  Geraden und Ebene zu berechnen benötigt man den
+Normalenvektor der Ebene:
+
+Gegeben:
+
+g: $\vec{x}=\vec{s}+\lambda \vec{r_1}$
+
+$\Sigma: \vec{x} = \vec{s} + \lambda \cdot {r_2} + \mu \cdot \vec{q}$
+
+$\vec{n} = \vec{r_2} \times \vec{q_2}$
+
+Danach kann man mit den Normalenvektor und dem Richtungsvektor der Geraden rechnen
+
+$cos \varphi = \frac{|\vec{n} \cdot \vec{r_1}|}{|\vec{n}| \cdot |\vec{r_1}|}$
+
+Danach muss noch 90° Minus den Winkel Phi gerechnet werden, da man sonst den
+Winkle zwischen Richtungsvektor und Normalenvektor hätte und nicht zwischen
+Richungsvektor und Ebene.
+
+
+### Winkel zwischen Ebene und Ebene
+Bei zwei Ebenen kann man den Winkel zwischen den zwei Normalenvektoren
+berechnen. Ist dieser Winkel grösser als 90° so muss 180° - Winkel gerechnet
+werden, denn es ist immer der kleinstmögliche Winkel gefragt.
+
+
+$cos \varphi = \frac{|\vec{n_1} \cdot \vec{n_2}|}{|\vec{n_1}| \cdot |\vec{n_2}|}$

@@ -1,0 +1,46 @@
+
+## Winkel
+
+### Winkel zwischen Vektor und Vektor
+$cos \varphi = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}$
+
+### Winkel zwischen Vektor und Geraden
+Um den Winkel zwischen VEktor und Geraden zu berechnen muss man nur den gegeben
+Vektor und den Richtungsvektor der Geraden verwenden. Dann ist das Verfahren
+gemäss Vektor und Vektor
+
+### Winkel zwischen Vektor und Ebene
+Funktioniert wie Gerade und Ebene lediglich mit dem Vektor statt dem
+Richungsvektor.
+
+### Winkel zwischen Gerade und Gerade
+Das selbe Vorgehen wie bei zwei Vektoren, lediglich mit den Richtungsvektoren.
+
+### Winkel zwischen Gerade und Ebene
+um den Winkel zwischen  Geraden und Ebene zu berechnen benötigt man den
+Normalenvektor der Ebene:
+
+Gegeben:
+
+g: $\vec{x}=\vec{s}+\lambda \vec{r_1}$
+
+$\Sigma: \vec{x} = \vec{s} + \lambda \cdot {r_2} + \mu \cdot \vec{q}$
+
+$\vec{n} = \vec{r_2} \times \vec{q_2}$
+
+Danach kann man mit den Normalenvektor und dem Richtungsvektor der Geraden rechnen
+
+$cos \varphi = \frac{|\vec{n} \cdot \vec{r_1}|}{|\vec{n}| \cdot |\vec{r_1}|}$
+
+Danach muss noch 90° Minus den Winkel Phi gerechnet werden, da man sonst den
+Winkle zwischen Richtungsvektor und Normalenvektor hätte und nicht zwischen
+Richungsvektor und Ebene.
+
+
+### Winkel zwischen Ebene und Ebene
+Bei zwei Ebenen kann man den Winkel zwischen den zwei Normalenvektoren
+berechnen. Ist dieser Winkel grösser als 90° so muss 180° - Winkel gerechnet
+werden, denn es ist immer der kleinstmögliche Winkel gefragt.
+
+
+$cos \varphi = \frac{|\vec{n_1} \cdot \vec{n_2}|}{|\vec{n_1}| \cdot |\vec{n_2}|}$
