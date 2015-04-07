@@ -208,3 +208,257 @@ werden, denn es ist immer der kleinstmögliche Winkel gefragt.
 
 
 $cos \varphi = \frac{|\vec{n_1} \cdot \vec{n_2}|}{|\vec{n_1}| \cdot |\vec{n_2}|}$
+
+##Abstände
+
+### Abstand Punkt zu Punkt
+Der Abstand zwischen zwei Punkten ist leicht berechnet. Man muss lediglich einen
+Vektor bilden, der diese beiden Punkte verbindet und die Länge von diesem
+berechnen.
+
+$P(P_1,P_2,P_3), F(F_1,F_2,F_3)$
+
+$\vec{PF} = \sqrt{(F_1-P_1)^2 + (F_2-P_2)^2 + (F_3-P_3)^2}$
+
+### Abstand Punkt zu Gerade
+Gegeben ist: Der Betrag vom Vektor, von einem Punkt auf der Geraden zum Punkt
+der Orthagonal zur Geraden ist, ist die Lösung.
+
+Um nun auf diese Lösung sind mehrere Schritte nötig:
+
+1. Punkt und Gerade sind gegeben.
+2. Richtungsvektor der Geraden wird entnommen.
+3. Aus dem gegeben Punkt P wird eine Hilfsebene zusammengesetzt.
+4. Schnittpunkt zwischen Hilfsebene und Gerade wird ermittelt.
+5. Vektor zwischen Schnittpunkt von Hilfsebene und Gerade zu Punkt wird gebildet
+6. Länge des Vektors wird berechnet. Diese Länge entspricht dem Abstand zwischen
+   Gerade und Punkt
+
+Beispiel:
+
+1. $P = (6,6,6)$ $$g: \vec{x} = \begin{pmatrix}
+1\\
+2\\
+3\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$
+2. Richtungsvektor der Geraden: $$\vec{r} = \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$
+3. Ebene aus P und r in Normalenform: $$\Sigma: [\vec{x}-\begin{pmatrix}
+6\\
+6\\
+6\\
+\end{pmatrix}]\cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix} = 0$$
+4. Nun wird g in $\Sigma$ eingesetzt. $(g in \Sigma)
+   4\cdot(1+4\lambda)+5\cdot(2+5\lambda)+6(3+6\lambda) = 90
+   32 + 77 \cdot \lambda = 90
+   \lambda = \frac{58}{77}$
+5. $$(\lambda in g) \vec{x} = \begin{pmatrix}
+1\\
+2\\
+3\\
+\end{pmatrix} + \frac{58}{77} \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$
+$$\vec{0S} \approx \begin{pmatrix}
+4,013\\
+5,766\\
+7,519\\
+\end{pmatrix}$$
+
+6. $$\vec{SP} \approx \begin{pmatrix}
+6-4,013\\
+6-5,766\\
+6-7,519\\
+\end{pmatrix}$$
+$|\vec{SP}| = \sqrt{(1,987^2 + 0,234^2 + (-1,519)^2} \approx 2,512$
+
+
+### Abstand Punkt zu Ebene
+Um einen Abstand von einem Punkt zu einer Ebene zu berechnen, muss man den Punkt
+in die Hessesche Normalform der Ebene einsetzen
+
+Gegeben ist ein Punkt und eine Ebene in Koordinatenform
+
+1. P(100, 200, 300), $\Sigma: 3x_1+4x_2+5x_3 = 1$, $$\vec{n} = \begin{pmatrix}
+3\\
+4\\
+5\\
+\end{pmatrix}$$, $|\vec{n}| = \sqrt{50}$
+2. $HNF: \frac{3x_1+4x_2+5x_3+1}{\sqrt{50}}=d$
+3. $d=\frac{300+800+1500-1}{\sqrt{50}} \approx 367,554$
+
+### Abstand Gerade zu Gerade
+Hierbei gibt es 3 Fälle:
+
+* Die geraden schneiden sich: Abstand = 0 keine Rechnung nötig!
+* Die Geraden sind parallel
+* Die Geraden sind windschief
+
+#### parallel
+
+1. Punkt von einer Geraden nehmen.
+2. Gleiches vorgehen wie Punkt - Gerade
+
+#### windschief
+
+1. Zwei windschiefe Geraden sind Gegeben
+2. Hilfsebene bilden: als Richtungsvektoren die Richtungsvektoren der beiden
+   Geraden, als Stützvektor den Stützvektor einer geraden. (Hier g)
+3. Eine Gerade liegt dann in der Hilfsebene (hier g), eine liegt parallel zu
+   dieser (hier h)
+4. Abstand der Geraden zur Hilfsebene bestimmen (also hier Abstand h zu Hilfsebene)
+
+Beispiel:
+
+$$g: \vec{x}= \begin{pmatrix}
+2\\
+0\\
+1\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+3\\
+4\\
+-2\\
+\end{pmatrix} $$
+
+$$h: \vec{x}= \begin{pmatrix}
+-1\\
+-4\\
+1\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+-4\\
+7\\
+2\\
+\end{pmatrix} $$
+
+Nun wird die Hilfsebene gebildet:
+
+$$\Sigma_{hilf}: \vec{x} = \begin{pmatrix}
+2\\
+0\\
+1\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+3\\
+4\\
+-2\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+-4\\
+7\\
+2\\
+\end{pmatrix}$$
+
+Um den Abstand eines Punktes, der auf GErade h liegt, von dieser Ebenen zu
+bestimmen brauchen wir die Hessesche Normalenform (HNF) der Ebene. Um die zu
+erhalten müssen wir aber erst die Koordinatenform errechnen, für die wir
+wiederum einen Normalenvektor der Ebene benötigen. Der Normalenvektor wird mit
+Hilfe des Vektorprodukts berechnet.
+
+$$\vec{n} = \begin{pmatrix}
+3\\
+4\\
+-1\\
+\end{pmatrix} \times \begin{pmatrix}
+-4\\
+7\\
+2\\
+\end{pmatrix} = \begin{pmatrix}
+22\\
+2\\
+37\\
+\end{pmatrix}$$
+
+Die Länge des Normalenvektor brauchen wir später für die HNF
+$|\vec{n}| = \sqrt{22^2+2^2+37^2} = \sqrt{1857}$
+
+Nun wir die Normalenform der Ebene gebildet aus der wir einfach die
+Koordinatenform herleiten können:
+
+$$\Sigma_{hilf}: [\begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{pmatrix} - \begin{pmatrix}
+2\\
+0\\
+1\\
+\end{pmatrix}] \cdot \begin{pmatrix}
+22\\
+2\\
+37\\
+\end{pmatrix} = 0 $$
+
+Ausmultplizierten ergibt die Koordinatenform:
+
+$\Sigma_{hilf}: 22x_1 + 2x_2+37x_3-81=0$
+
+Geteilt durch den Betrag des Normalenvektor ergibt die HNF:
+
+$HNF: |\frac{22x_1+2x_2+37x_3-81}{\sqrt{1857}}| = d$
+
+In die HNF muss nun ein Punkt der auf der geraden h liegt eingesetzt werden.
+Hier bietet sich der Stützvektor an da er garantiert auf der Geraden liegt.
+
+$d = |\frac{-22-8+37-81}{\sqrt{1857}}| = \frac{74}{\sqrt{1857}} \approx 1,7122$ 
+
+
+### Abstand Gerade zu Ebene
+Auch hier gibt es wieder mehrere möglichkeiten
+
+* Gerade liegt auf Ebene: Abstand = 0
+* Gerade schneidet Ebene: Abstand = 0
+* Gerade ist parallel zu Ebene: es gibt etwas zu rechnen
+
+1. Prüfung auf parallelität: ist der Richtungsvektor orthagonal zum
+   Normalenvektor der Ebene? Liegt ein Punkt der Gerade in der Ebene:
+   (Stützvektor der Geraden in Ebenengleichung einsetzten)
+
+2. Abstandsrechnung: HNF bilden: $HNF: |\frac{2x_1+3x_2+4x_3-10}{\sqrt{29}}|
+   = d$
+3. Abstandsrechnung: Stützvektor in HNF einsetzen: $d
+   = |\frac{100+150+200-10}{\sqrt{29}}| = |\frac{440}{\sqrt{29}}| \approx 81,706$
+
+### Abstand Ebene zu Ebene
+Allgemeines Vorgehen:
+
+* Gegeben: zwei Ebenen E1 und E2
+* Normalenvektoren der beiden Ebenen finden
+* Prüfen ob Normalenvektoren linear Abhängig sind
+
+* Prüfen ob ein Punkt der einen Ebene in der anderen liegt (prüfen auf Schnittpunkt)
+* HNF von einer Ebene bilden, Punkt aus der anderen Suchen, einsetzen Abstand
+  bestimmen (Prüfung ob identisch)
+
+Beispiel:
+
+$\Sigma_1: 2x_1+4x_2+8x_3=1$
+$\Sigma_2: 2x_1+4x_2+8x_3=10$
+
+Es ist leicht erkennbar das die Normalenvektoren beider Ebenen gleich sind. Nur
+die Abstände vom 0 Punkt sind anders (1, 10) von daher müssen die Ebenen
+parallel sein.
+
+$$\vec{n} = \begin{pmatrix}
+2\\
+4\\
+8\\
+\end{pmatrix}$$
+
+$|\vec{n} = \sqrt{4+16+64} = \sqrt{84}$
+
+$HNF: \frac{2x_1+4x_2+8x_3}{\sqrt{84}} = d$
+
+Nun wird ein Punkt aus Ebene 2 eingesetzt ( hier 5,0,0)
+
+$d = |\frac{10+0+0-1}{\sqrt{84}}| \approx 0,982$
