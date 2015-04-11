@@ -1,0 +1,190 @@
+##Schnittprobleme
+
+### Gerade schneidet Gerade
+Um einen Schnittpunkt zwischen zwei Geraden zu berechnen geht man wie folgt vor:
+
+* Prüfung ob Richtungsvektoren linear Abhängig sind
+* Wenn nein: Geraden gleichsetzen (also eine Geradengleichung für $\vec{x}$ der
+  anderen Geradengleichung einsetzen.
+* Das ergibt ein lineares Gleichungssystem. Beide Variablen ausrechnen und in
+  die dritte Gleichung einsetzen.
+* Das Ergebnis für diese Variable bei der entsprechenden Geradengleichung einsetzen
+* Ausrechnen: Ergebnis ist der Schnittpunkt
+
+Beispiel: $$g:\vec{x} = \begin{pmatrix}
+1\\
+1\\
+1\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix}$$
+
+$$h: \vec{x}=\begin{pmatrix}
+-2\\
+-3\\
+-4\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}
+
+Vektoren sind linear unabhängig da für $$\begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix} = x \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$ kein einheitliches x gefunden werden kann.
+
+Nun werden wird das Gleichungssystem gebildet:
+
+$$\begin{align}
+1+2 \cdot \lambda &= -2+4 \cdot \mu\\
+1+2 \cdot \lambda &= -3+5 \cdot \mu\\
+1+2 \cdot \lambda &= -4+6 \cdot \mu\\
+\end{align}$$
+
+Nun setzen wir $\mu$ in h ein, da $\mu = 1$ ist.
+
+$$\vec{x} = \begin{pmatrix}
+-2\\
+-3\\
+-4\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$
+
+$$\rightarrow \vec{0S}=\begin{pmatrix}
+-2\\
+-3\\
+-4\\
+\end{pmatrix} + \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix} = \vec{0S} = \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix}$$
+
+###Gerade schneidet Ebene
+
+Um den Schnittpunkt von einer Geraden mit einer Ebene zu berechnen geht man wie
+folgt vor: 
+
+* Ebene in Koordinatenform
+* Gerade in Ebene einsetzen
+* Ergebnis auswerten: Wenn Variable = Wert => Schnittpunkt, Wenn wahres Ergebnis
+  (z.b. 1=1 alle Punkte der Geraden liegen auf der Ebene.), Wenn unwahres
+  Ergebnis (z.b. 1=3) kein Punkt der Geraden liegt auf der Ebene.
+
+Beispiel: $$g: \vec{x}=\begin{pmatrix}
+1\\
+1\\
+1\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix}$$
+
+$\Sigma: x_1 \cdot 4 + x_2 \cdot 4 + x_3 \cdot 4 = 5$
+
+g in E einsetzen und ausrechnen:
+
+$(1+\lambda \cdot 2)\cdot 4 + 1+\lambda\cdot 2)\cdot 4 + (1 + \lambda \cdot 2)
+\cdot 4 = 5$
+
+$\lambda = -\frac{7}{24}$
+
+Es ist nun das Format Variable = Wert aufgetreten. Es gibt also einen
+Schnittpunkt. Dieser Wert muss nun in der Geradengleichung als Parameter
+eingetragen werden.
+
+$$\vec{0S} = \begin{pmatrix}
+1\\
+1\\
+1\\
+\end{pmatrix} + (- \frac{7}{24}) \cdot \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix} = \begin{pmatrix}
+\frac{5}{12}\\
+\frac{5}{12}\\
+\frac{5}{12}\\
+\end{pmatrix}$$
+
+###Ebene schneidet Ebene
+
+Da die Rechnung zur Berechnung der Schnittgerade komplex ist, sollte zuerst
+geprüft werden, ob überhaupt eine Schnittgerade auftritt.
+
+* Prüfen: Sind die Normalvektoren der Ebenen linear voneinander Abhängig?
+    * Nein: Ebenen schneiden sich auf jeden Fall
+    * Ja: Die Ebenen sind mindestens parallel
+* Prüfen: Liegt ein beliebig gewählter PUnkt von einer Ebene auf der anderen Ebene?
+    * Nein: Ebenen sind nur parallel
+    * Ja: Ebenen liegen ineinander
+
+Also: Man muss die Schnittgerade nur dann ausrechnen, wenn die beiden
+Normalenvektoren voneinander unabhängig sind.
+
+Beispiel zur Berechnung:
+$\Sigma_1: 1x_1 + 2x_2 + 3x_3 = 4$
+
+$\Sigma_2: 5_x1 +4x_2 + 5x_3 = 5$
+
+Normalenvektor finden und auf lineare Abhägigkeit prüfen:
+
+$$\vec{n_1} = \begin{pmatrix}
+1\\
+2\\
+3\\
+\end{pmatrix}, \vec{n_2} = \begin{pmatrix}
+5\\
+5\\
+5\\
+\end{pmatrix}$$
+
+Die Normalenvektoren sind nicht linear voneinander Abhängig.
+
+Schnittgerade berechnen:
+
+$$\begin{align}
+1x_1 + 2x_2 +3x_3 &= 4\\
+5x_1 + 5x_2 +5x_3 &= 5\\
+\end{align}$$
+
+Nun müssen $x_1, x_2, x_3$ berechnet werden und in eine Geradengleichung
+gebracht werden.
+
+$$\vec{x} = \begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{pmatrix} = \begin{pmatrix}
+-\frac{1}{2} - \frac{1}{2} \lambda\\
+\lambda\\
+-\frac{1}{2} + \frac{3}{2} \lambda\\
+\end{pmatrix}$$
+
+Durch umformen kommt man auf das Resultat:
+
+$$=\begin{pmatrix}
+-\frac{1}{2}\\
+0\\
+\frac{3}{2}\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+-\frac{1}{2}\\
+1\\
+-\frac{1}{2}\\
+\end{pmatrix}$$
