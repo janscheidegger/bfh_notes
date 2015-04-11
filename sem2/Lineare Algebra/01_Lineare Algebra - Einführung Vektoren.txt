@@ -162,3 +162,80 @@ Berechnung: $\sqrt{a_1^2 + a_2^2}$
 
 ## Normierung eines Vektors auf 1
 $\vec{e}_{\vec{a}} = \frac{\vec{a}}{|\vec{a}|}$
+
+## Umrechnen zwischen Ebenengleichungen
+
+###Parameterform zu Normalform
+
+Gegeben: $$\Sigma: \vec{x} = \begin{pmatrix}
+1\\
+2\\
+3\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+5\\
+6\\
+7\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+9\\
+9\\
+9\\
+\end{pmatrix}$$
+
+Vektorprodukt der beiden Richtungsvektoren bilden:
+
+$$\vec{n} = \vec{r_1} \times \{r_2} = \begin{pmatrix}
+-1\\
+2\\
+-1\\
+\end{pmatrix}$$
+
+Endresultat: $$\Sigma: [\vec{x} - \begin{pmatrix}
+1\\
+2\\
+2\\
+\end{pmatrix} ] \cdot \begin{pmatrix}
+-1\\
+2\\
+-1\\
+\end{pmatrix} = 0$$
+
+### Normalenform zu Koordinatenform
+Hier muss nur ausmultipliziert werden und d auf die rechte Seite der Gleichung
+geschoben werden
+
+### Koordinatenform zu Normalenform
+Um von der Koordinatenform zur Normalenform zu kommen, muss man nur einen
+einzigen Punkt der Ebene bestimmen. Den Normalenvektor kann man ablesen.
+
+$\Sigma_{Koord}: -x+ 2 \cdot x_2 - x_3 = 0$
+
+$$ \Rightarrow \vec{n} = \begin{pmatrix}
+\\-1
+\\2
+\\-1
+\end{pmatrix}$$
+
+Nun muss man einen Punkt in der Ebene finden. Dies geht am einfachsten, indem
+man Werte für x1, x2 und x3 so einsetzt, dass ein wahres ergebnis herauskommt.
+
+$-(1) + 2 \cdot (0) - (-1) = 0$
+
+Der Punkt (1|0|-1) liegt also in der Ebene. Punkt und Normalenvektor können
+jetzt einfach für eine Ebene in Normalenform verwendet werden.
+
+$$\Sigma{Norm}: [\vec{x}-\begin{pmatrix}
+1\\
+0\\
+-1\\
+\end{pmatrix} ] \cdot \begin{pmatrix}
+-1\\
+2\\
+-1\\
+\end{pmatrix} = 0$$
+
+### Koordinatenform zu Parameterform
+Am einfachsten werden mit der Koordinatenform 3 Punkte gesucht die auf der Ebene
+liegen und mit denen dann die Parameterform gebildet: 
+
+$\Sigma{Para}: \vec{x} = P_1 + \lambda \cdot (P_2 - P_1) + \mu \cdot (P_3
+- P_1)$
