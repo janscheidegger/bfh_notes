@@ -163,6 +163,83 @@ Berechnung: $\sqrt{a_1^2 + a_2^2}$
 ## Normierung eines Vektors auf 1
 $\vec{e}_{\vec{a}} = \frac{\vec{a}}{|\vec{a}|}$
 
+## Umrechnen zwischen Ebenengleichungen
+
+###Parameterform zu Normalform
+
+Gegeben: $$\Sigma: \vec{x} = \begin{pmatrix}
+1\\
+2\\
+3\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+5\\
+6\\
+7\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+9\\
+9\\
+9\\
+\end{pmatrix}$$
+
+Vektorprodukt der beiden Richtungsvektoren bilden:
+
+$$\vec{n} = \vec{r_1} \times \vec{r_2} = \begin{pmatrix}
+-1\\
+2\\
+-1\\
+\end{pmatrix}$$
+
+Endresultat: $$\Sigma: [\vec{x} - \begin{pmatrix}
+1\\
+2\\
+2\\
+\end{pmatrix} ] \cdot \begin{pmatrix}
+-1\\
+2\\
+-1\\
+\end{pmatrix} = 0$$
+
+### Normalenform zu Koordinatenform
+Hier muss nur ausmultipliziert werden und d auf die rechte Seite der Gleichung
+geschoben werden
+
+### Koordinatenform zu Normalenform
+Um von der Koordinatenform zur Normalenform zu kommen, muss man nur einen
+einzigen Punkt der Ebene bestimmen. Den Normalenvektor kann man ablesen.
+
+$\Sigma_{Koord}: -x+ 2 \cdot x_2 - x_3 = 0$
+
+$$ \Rightarrow \vec{n} = \begin{pmatrix}
+\\-1
+\\2
+\\-1
+\end{pmatrix}$$
+
+Nun muss man einen Punkt in der Ebene finden. Dies geht am einfachsten, indem
+man Werte für x1, x2 und x3 so einsetzt, dass ein wahres ergebnis herauskommt.
+
+$-(1) + 2 \cdot (0) - (-1) = 0$
+
+Der Punkt (1|0|-1) liegt also in der Ebene. Punkt und Normalenvektor können
+jetzt einfach für eine Ebene in Normalenform verwendet werden.
+
+$$\Sigma{Norm}: [\vec{x}-\begin{pmatrix}
+1\\
+0\\
+-1\\
+\end{pmatrix} ] \cdot \begin{pmatrix}
+-1\\
+2\\
+-1\\
+\end{pmatrix} = 0$$
+
+### Koordinatenform zu Parameterform
+Am einfachsten werden mit der Koordinatenform 3 Punkte gesucht die auf der Ebene
+liegen und mit denen dann die Parameterform gebildet: 
+
+$\Sigma{Para}: \vec{x} = P_1 + \lambda \cdot (P_2 - P_1) + \mu \cdot (P_3
+- P_1)$
+
 ## Winkel
 
 ### Winkel zwischen Vektor und Vektor
@@ -462,3 +539,374 @@ $HNF: \frac{2x_1+4x_2+8x_3}{\sqrt{84}} = d$
 Nun wird ein Punkt aus Ebene 2 eingesetzt ( hier 5,0,0)
 
 $d = |\frac{10+0+0-1}{\sqrt{84}}| \approx 0,982$
+
+##Kugel
+
+Eine Kugel ist Definiert durch einen Punkt (Den Ursprung, die Mitte) und einen
+Radius R.
+
+Für einen Punkt der auf der vom Mittelpunkt zu einem Punkt auf der Kugelfläche
+liegt muss gelten: $|\vec{x}| = r$
+
+### Schnitt Kugel - Gerade
+Gegeben ist eine Kugel mit dem Mittelpunkt im Ursprung:
+
+Schnitt = $$[\begin{pmatrix}
+5\\
+4\\
+4\\
+\end{pmatrix} + \lambda \begin{pmatrix}
+3\\
+1\\
+0\\
+\end{pmatrix}]^2 = 36$$ ergibt 2 Lösungen für Lambda welche in die
+Geradengleichung eingesetzt werden können und dann die beiden Schnittpunkte mit
+der Geraden ergeben.
+
+Um den Schnittpunkt mit einer Kugeldurchzuführen, die nicht am Ursprung liegt,
+muss die Geradengleichung $\vec{x}$ in die Kugelgleichung $$[\vec{x}
+- \begin{pmatrix}
+x\\
+y\\
+z\\
+\end{pmatrix}^2 = r$$
+
+### Tangentialebene
+Für eine Kugel mit dem Mittelpunkt M lautet die Normalenform der
+Tangentialebene: $\vec{n}\cdot(\vec{x}-\vec{0P}= 0$ mit $\vec{n} = \vec{0P}
+- \vec{0M}$
+
+###Koordinatengleichung der Kugelgleichung
+Eine Kugelgleichung $$[\vec{x} - \begin{pmatrix}
+3\\
+-2\\
+1\\
+\end{pmatrix}]^2 = 25$$
+
+Kann auch in der Form $(x-3)^2 + (y+2)^2 + (z+1)^2= 25$ angegeben werden.
+
+
+
+##Schnittprobleme
+
+### Gerade schneidet Gerade
+Um einen Schnittpunkt zwischen zwei Geraden zu berechnen geht man wie folgt vor:
+
+* Prüfung ob Richtungsvektoren linear Abhängig sind
+* Wenn nein: Geraden gleichsetzen (also eine Geradengleichung für $\vec{x}$ der
+  anderen Geradengleichung einsetzen.
+* Das ergibt ein lineares Gleichungssystem. Beide Variablen ausrechnen und in
+  die dritte Gleichung einsetzen.
+* Das Ergebnis für diese Variable bei der entsprechenden Geradengleichung einsetzen
+* Ausrechnen: Ergebnis ist der Schnittpunkt
+
+Beispiel: $$g:\vec{x} = \begin{pmatrix}
+1\\
+1\\
+1\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix}$$
+
+$$h: \vec{x}=\begin{pmatrix}
+-2\\
+-3\\
+-4\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$
+
+Vektoren sind linear unabhängig da für $$\begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix} = x \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$ kein einheitliches x gefunden werden kann.
+
+Nun werden wird das Gleichungssystem gebildet:
+
+$$\begin{aligned}
+1+2 \cdot \lambda &= -2+4 \cdot \mu \\
+1+2 \cdot \lambda &= -3+5 \cdot \mu \\
+1+2 \cdot \lambda &= -4+6 \cdot \mu
+\end{aligned}$$
+
+Nun setzen wir $\mu$ in h ein, da $\mu = 1$ ist.
+
+$$\vec{x} = \begin{pmatrix}
+-2\\
+-3\\
+-4\\
+\end{pmatrix} + \mu \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix}$$
+
+$$\rightarrow \vec{0S}=\begin{pmatrix}
+-2\\
+-3\\
+-4\\
+\end{pmatrix} + \cdot \begin{pmatrix}
+4\\
+5\\
+6\\
+\end{pmatrix} = \vec{0S} = \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix}$$
+
+###Gerade schneidet Ebene
+
+Um den Schnittpunkt von einer Geraden mit einer Ebene zu berechnen geht man wie
+folgt vor: 
+
+* Ebene in Koordinatenform
+* Gerade in Ebene einsetzen
+* Ergebnis auswerten: Wenn Variable = Wert => Schnittpunkt, Wenn wahres Ergebnis
+  (z.b. 1=1 alle Punkte der Geraden liegen auf der Ebene.), Wenn unwahres
+  Ergebnis (z.b. 1=3) kein Punkt der Geraden liegt auf der Ebene.
+
+Beispiel: $$g: \vec{x}=\begin{pmatrix}
+1\\
+1\\
+1\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix}$$
+
+$\Sigma: x_1 \cdot 4 + x_2 \cdot 4 + x_3 \cdot 4 = 5$
+
+g in E einsetzen und ausrechnen:
+
+$(1+\lambda \cdot 2)\cdot 4 + 1+\lambda\cdot 2)\cdot 4 + (1 + \lambda \cdot 2)
+\cdot 4 = 5$
+
+$\lambda = -\frac{7}{24}$
+
+Es ist nun das Format Variable = Wert aufgetreten. Es gibt also einen
+Schnittpunkt. Dieser Wert muss nun in der Geradengleichung als Parameter
+eingetragen werden.
+
+$$\vec{0S} = \begin{pmatrix}
+1\\
+1\\
+1\\
+\end{pmatrix} + (- \frac{7}{24}) \cdot \begin{pmatrix}
+2\\
+2\\
+2\\
+\end{pmatrix} = \begin{pmatrix}
+\frac{5}{12}\\
+\frac{5}{12}\\
+\frac{5}{12}\\
+\end{pmatrix}$$
+
+###Ebene schneidet Ebene
+
+Da die Rechnung zur Berechnung der Schnittgerade komplex ist, sollte zuerst
+geprüft werden, ob überhaupt eine Schnittgerade auftritt.
+
+* Prüfen: Sind die Normalvektoren der Ebenen linear voneinander Abhängig?
+    * Nein: Ebenen schneiden sich auf jeden Fall
+    * Ja: Die Ebenen sind mindestens parallel
+* Prüfen: Liegt ein beliebig gewählter PUnkt von einer Ebene auf der anderen Ebene?
+    * Nein: Ebenen sind nur parallel
+    * Ja: Ebenen liegen ineinander
+
+Also: Man muss die Schnittgerade nur dann ausrechnen, wenn die beiden
+Normalenvektoren voneinander unabhängig sind.
+
+Beispiel zur Berechnung:
+$\Sigma_1: 1x_1 + 2x_2 + 3x_3 = 4$
+
+$\Sigma_2: 5_x1 +4x_2 + 5x_3 = 5$
+
+Normalenvektor finden und auf lineare Abhägigkeit prüfen:
+
+$$\vec{n_1} = \begin{pmatrix}
+1\\
+2\\
+3\\
+\end{pmatrix}, \vec{n_2} = \begin{pmatrix}
+5\\
+5\\
+5\\
+\end{pmatrix}$$
+
+Die Normalenvektoren sind nicht linear voneinander Abhängig.
+
+Schnittgerade berechnen:
+
+$$\begin{aligned}
+1x_1 + 2x_2 +3x_3 &= 4\\
+5x_1 + 5x_2 +5x_3 &= 5\\
+\end{aligned}$$
+
+Nun müssen $x_1, x_2, x_3$ berechnet werden und in eine Geradengleichung
+gebracht werden.
+
+$$\vec{x} = \begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{pmatrix} = \begin{pmatrix}
+-\frac{1}{2} - \frac{1}{2} \lambda\\
+\lambda\\
+-\frac{1}{2} + \frac{3}{2} \lambda\\
+\end{pmatrix}$$
+
+Durch umformen kommt man auf das Resultat:
+
+$$=\begin{pmatrix}
+-\frac{1}{2}\\
+0\\
+\frac{3}{2}\\
+\end{pmatrix} + \lambda \cdot \begin{pmatrix}
+-\frac{1}{2}\\
+1\\
+-\frac{1}{2}\\
+\end{pmatrix}$$
+
+## Gaussches Eliminationverfahren
+
+Das gausssche Eliminationverfahren dient dazu Gleichungen mit vielen Unbekannten 
+mit einem festen Vorgehen zu lösen
+
+### Vorgehen
+
+* Zuerst muss das Gleichungssystem in die Stufenform gebracht werden. Dies
+  geschieht dadurch, indem die Matrix durch Addition und vertrauschen von
+  Zeilen.
+* Zeilen eine Matrix können dividiert oder multipliziert werden. Jedoch nur mit
+  sich selber.
+* Wenn eine Zeile einmal in Stufenform gebracht worden ist, muss/darf sie nicht
+  mehr verändert werden.
+
+### Lösbarkeit durch den Rang eines Gleichungssystems
+
+Wenn ein Gleichungssystem einmal in Stufenform gebracht worden ist, kann die
+Lösbarkeit des Lösungssystems bestimmt werden.
+
+Der Rang einer Matrix ist die Anzahl der nicht 0 Zeilen. 0-Zeilen sind Zeilen,
+welche in der ganzen Reihe 0 haben.
+
+* _Genau eine Lösung_ wenn der Rang der Koeffizientenmatrix (Der Matrix in
+  Stufenform) der Anzahl Unbekannten ist.
+* _Unendlich viele Lösungen_ wenn der Rang der (erweiterten)
+  Koeffizientenmatrix kleiner ist als die Anzahl der Unbekannten. Die Anzahl
+  0 Zeilen bestimmt die Anzahl Parameter die in die Gleichung eingesetzt werden
+  können.
+* _Keine Lösung_ wenn der Rang der Koeffizientenmatrix kleiner ist als der Rang
+  der erweiterten Koeffizientenmatrix. 
+
+## Cramer/Determinante
+
+### Determinante
+Durch die Determinante kann bestimmt werden ob ein Gleichungssystem lösbar ist.
+Wenn die Determinante der Koeffizientenmatrix = 0 ist, dann hat das
+Gleichungssystem 0 oder unendlich Lösungen.
+
+$$A = \begin{pmatrix}
+a\: b\\
+c\: d\\
+\end{pmatrix}$$
+
+Dann ist $$det \begin{pmatrix}
+a\: b\\
+c\: d\\
+\end{pmatrix} = ad - bc$$
+
+#### Regel von Sarrus
+Die Regel von Sarrus kann das Berechnen einer 3x3 Matrix vereinfachen.
+
+Dazu erweiter man die Matrix um die ersten zwei Zeilen. Dann kann man von oben
+Links 3x addieren dann von unten links 3x subrathieren.
+
+Beispiel:
+$$\begin{pmatrix}
+a\: b\: c\: a\: b\\
+d\: e\: f\: d\: e\\
+g\: h\: i\: g\: h\\
+\end{pmatrix}$$
+
+Dann gilt: $aeh + bef + cdh - gec -hfa -idb$
+
+###Cramersche Regel
+Um die Lösungen eines Gleichungssystems zu bestimmen, kann man auch die
+Cramersche Regel anwenden. Diese ist nur bei sehr kleinen Gleichungssystemen
+praktikabel (bis zu 3 unbekannten), danach löst man die Gleichungssysteme besser
+mit dem Gaussches Eliminationsverfahren.
+
+Um ein Gleichungssystem mit Cramer zu berechnen muss man n + 1 Determinanten
+berechnen.
+
+Zuerst muss man die Determinante der Koeffizientenmatrix berechnen. Danach für
+jede Zeile einmal durch die Lösungsmatrix ersetzen.
+
+$$\begin{pmatrix}
+a\: b\: c\; x\\
+d\: e\: f\; x\\
+g\: h\: i\; x\\
+\end{pmatrix}$$
+
+Berechen für $x_1$ muss man nun beispielsweise:
+
+$$det(A_1) \begin{pmatrix}
+x\: b\: c\\
+x\: e\: f\\
+x\: h\: i\\
+\end{pmatrix}$$
+
+Die Lösung erhält man dann durch $\frac{det(A)}{det(A_1)}$ dies muss dann für
+jede Unbekannte durchgeführt werden. Natürlich muss x x x dann an der jeweilgen
+Stelle in der Matrix eingesetzt werden.
+
+
+
+## Inverse einer Matrix
+
+Zweck: Bildet eine invertierbare Matrix A einen Vektor x auf einen Vektor b ab,
+so bildet die Inverse der Matrix den Vektor b auf den Vektor x ab. Es ist also
+die "umgekehrte" Operation.
+
+Eine Inverse Matrix ist ebenfalls wie die Ursprungsmatrix eine Quadratische
+Matrix. Mulitpliziert man die Inverse Matrix mit der Ausgangsmatrix so erhält
+man die Einheitsmatrix. Nicht jede Matrix besitzt eine Inverse Matrix. Ist eine
+Matrix invertierbar so nennt man diese reguläre Matrix.
+
+### Berechnung der Inversen Matrix mit Gauss- Jordan
+Das Vorgehen von Gauss Jordan ist nicht kompliziert, wenn man weiss wie man es
+Anwenden muss. Als erstes Fügt man der quadratischen Matrix die man invertieren
+will die Einheitsmatrix an.
+
+Bsp: $$\begin{pmatrix}
+a\: b\: c\; 1\: 0\: 0\\
+d\: e\: f\; 0\: 1\: 0\\
+g\: h\: i\; 0\: 0\: 1\\
+\end{pmatrix}$$
+
+Die Matrix muss dann mit Gauss in die "3-Ecksform" gebracht werden. - Das selbe
+Vorgehen wie beim Gausschen Eliminationsverfahren.
+
+Anschliessend wird mit "Jordan" wieder von unten hoch gerechnet, so das in den
+ersten 3 Spalten nur noch die Diagonale befüllt ist. Anschliessend muss diese
+Diagonale so dividiert werden, dass die Einheitsmatrix auf der linken Seite
+steht.
+
+$$\begin{pmatrix}
+1\: 0\: 0\; j\: k\: l\\
+0\: 1\: 0\; m\: n\: o\\
+0\: 0\: 1\; p\: q\: r\\
+\end{pmatrix}$$
+

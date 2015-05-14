@@ -1,0 +1,32 @@
+
+## Gaussches Eliminationverfahren
+
+Das gausssche Eliminationverfahren dient dazu Gleichungen mit vielen Unbekannten 
+mit einem festen Vorgehen zu lösen
+
+### Vorgehen
+
+* Zuerst muss das Gleichungssystem in die Stufenform gebracht werden. Dies
+  geschieht dadurch, indem die Matrix durch Addition und vertrauschen von
+  Zeilen.
+* Zeilen eine Matrix können dividiert oder multipliziert werden. Jedoch nur mit
+  sich selber.
+* Wenn eine Zeile einmal in Stufenform gebracht worden ist, muss/darf sie nicht
+  mehr verändert werden.
+
+### Lösbarkeit durch den Rang eines Gleichungssystems
+
+Wenn ein Gleichungssystem einmal in Stufenform gebracht worden ist, kann die
+Lösbarkeit des Lösungssystems bestimmt werden.
+
+Der Rang einer Matrix ist die Anzahl der nicht 0 Zeilen. 0-Zeilen sind Zeilen,
+welche in der ganzen Reihe 0 haben.
+
+* _Genau eine Lösung_ wenn der Rang der Koeffizientenmatrix (Der Matrix in
+  Stufenform) der Anzahl Unbekannten ist.
+* _Unendlich viele Lösungen_ wenn der Rang der (erweiterten)
+  Koeffizientenmatrix kleiner ist als die Anzahl der Unbekannten. Die Anzahl
+  0 Zeilen bestimmt die Anzahl Parameter die in die Gleichung eingesetzt werden
+  können.
+* _Keine Lösung_ wenn der Rang der Koeffizientenmatrix kleiner ist als der Rang
+  der erweiterten Koeffizientenmatrix. 

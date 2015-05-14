@@ -1,0 +1,47 @@
+
+##Kugel
+
+Eine Kugel ist Definiert durch einen Punkt (Den Ursprung, die Mitte) und einen
+Radius R.
+
+Für einen Punkt der auf der vom Mittelpunkt zu einem Punkt auf der Kugelfläche
+liegt muss gelten: $|\vec{x}| = r$
+
+### Schnitt Kugel - Gerade
+Gegeben ist eine Kugel mit dem Mittelpunkt im Ursprung:
+
+Schnitt = $$[\begin{pmatrix}
+5\\
+4\\
+4\\
+\end{pmatrix} + \lambda \begin{pmatrix}
+3\\
+1\\
+0\\
+\end{pmatrix}]^2 = 36$$ ergibt 2 Lösungen für Lambda welche in die
+Geradengleichung eingesetzt werden können und dann die beiden Schnittpunkte mit
+der Geraden ergeben.
+
+Um den Schnittpunkt mit einer Kugeldurchzuführen, die nicht am Ursprung liegt,
+muss die Geradengleichung $\vec{x}$ in die Kugelgleichung $$[\vec{x}
+- \begin{pmatrix}
+x\\
+y\\
+z\\
+\end{pmatrix}^2 = r$$
+
+### Tangentialebene
+Für eine Kugel mit dem Mittelpunkt M lautet die Normalenform der
+Tangentialebene: $\vec{n}\cdot(\vec{x}-\vec{0P}= 0$ mit $\vec{n} = \vec{0P}
+- \vec{0M}$
+
+###Koordinatengleichung der Kugelgleichung
+Eine Kugelgleichung $$[\vec{x} - \begin{pmatrix}
+3\\
+-2\\
+1\\
+\end{pmatrix}]^2 = 25$$
+
+Kann auch in der Form $(x-3)^2 + (y+2)^2 + (z+1)^2= 25$ angegeben werden.
+
+

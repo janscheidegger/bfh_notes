@@ -1,0 +1,64 @@
+
+## Cramer/Determinante
+
+### Determinante
+Durch die Determinante kann bestimmt werden ob ein Gleichungssystem lösbar ist.
+Wenn die Determinante der Koeffizientenmatrix = 0 ist, dann hat das
+Gleichungssystem 0 oder unendlich Lösungen.
+
+$$A = \begin{pmatrix}
+a\: b\\
+c\: d\\
+\end{pmatrix}$$
+
+Dann ist $$det \begin{pmatrix}
+a\: b\\
+c\: d\\
+\end{pmatrix} = ad - bc$$
+
+#### Regel von Sarrus
+Die Regel von Sarrus kann das Berechnen einer 3x3 Matrix vereinfachen.
+
+Dazu erweiter man die Matrix um die ersten zwei Zeilen. Dann kann man von oben
+Links 3x addieren dann von unten links 3x subrathieren.
+
+Beispiel:
+$$\begin{pmatrix}
+a\: b\: c\: a\: b\\
+d\: e\: f\: d\: e\\
+g\: h\: i\: g\: h\\
+\end{pmatrix}$$
+
+Dann gilt: $aeh + bef + cdh - gec -hfa -idb$
+
+###Cramersche Regel
+Um die Lösungen eines Gleichungssystems zu bestimmen, kann man auch die
+Cramersche Regel anwenden. Diese ist nur bei sehr kleinen Gleichungssystemen
+praktikabel (bis zu 3 unbekannten), danach löst man die Gleichungssysteme besser
+mit dem Gaussches Eliminationsverfahren.
+
+Um ein Gleichungssystem mit Cramer zu berechnen muss man n + 1 Determinanten
+berechnen.
+
+Zuerst muss man die Determinante der Koeffizientenmatrix berechnen. Danach für
+jede Zeile einmal durch die Lösungsmatrix ersetzen.
+
+$$\begin{pmatrix}
+a\: b\: c\; x\\
+d\: e\: f\; x\\
+g\: h\: i\; x\\
+\end{pmatrix}$$
+
+Berechen für $x_1$ muss man nun beispielsweise:
+
+$$det(A_1) \begin{pmatrix}
+x\: b\: c\\
+x\: e\: f\\
+x\: h\: i\\
+\end{pmatrix}$$
+
+Die Lösung erhält man dann durch $\frac{det(A)}{det(A_1)}$ dies muss dann für
+jede Unbekannte durchgeführt werden. Natürlich muss x x x dann an der jeweilgen
+Stelle in der Matrix eingesetzt werden.
+
+

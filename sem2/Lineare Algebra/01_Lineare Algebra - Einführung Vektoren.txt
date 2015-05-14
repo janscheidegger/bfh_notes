@@ -183,7 +183,7 @@ Gegeben: $$\Sigma: \vec{x} = \begin{pmatrix}
 
 Vektorprodukt der beiden Richtungsvektoren bilden:
 
-$$\vec{n} = \vec{r_1} \times \{r_2} = \begin{pmatrix}
+$$\vec{n} = \vec{r_1} \times \vec{r_2} = \begin{pmatrix}
 -1\\
 2\\
 -1\\

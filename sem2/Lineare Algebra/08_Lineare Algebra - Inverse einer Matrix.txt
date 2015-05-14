@@ -1,0 +1,37 @@
+
+## Inverse einer Matrix
+
+Zweck: Bildet eine invertierbare Matrix A einen Vektor x auf einen Vektor b ab,
+so bildet die Inverse der Matrix den Vektor b auf den Vektor x ab. Es ist also
+die "umgekehrte" Operation.
+
+Eine Inverse Matrix ist ebenfalls wie die Ursprungsmatrix eine Quadratische
+Matrix. Mulitpliziert man die Inverse Matrix mit der Ausgangsmatrix so erhält
+man die Einheitsmatrix. Nicht jede Matrix besitzt eine Inverse Matrix. Ist eine
+Matrix invertierbar so nennt man diese reguläre Matrix.
+
+### Berechnung der Inversen Matrix mit Gauss- Jordan
+Das Vorgehen von Gauss Jordan ist nicht kompliziert, wenn man weiss wie man es
+Anwenden muss. Als erstes Fügt man der quadratischen Matrix die man invertieren
+will die Einheitsmatrix an.
+
+Bsp: $$\begin{pmatrix}
+a\: b\: c\; 1\: 0\: 0\\
+d\: e\: f\; 0\: 1\: 0\\
+g\: h\: i\; 0\: 0\: 1\\
+\end{pmatrix}$$
+
+Die Matrix muss dann mit Gauss in die "3-Ecksform" gebracht werden. - Das selbe
+Vorgehen wie beim Gausschen Eliminationsverfahren.
+
+Anschliessend wird mit "Jordan" wieder von unten hoch gerechnet, so das in den
+ersten 3 Spalten nur noch die Diagonale befüllt ist. Anschliessend muss diese
+Diagonale so dividiert werden, dass die Einheitsmatrix auf der linken Seite
+steht.
+
+$$\begin{pmatrix}
+1\: 0\: 0\; j\: k\: l\\
+0\: 1\: 0\; m\: n\: o\\
+0\: 0\: 1\; p\: q\: r\\
+\end{pmatrix}$$
+
