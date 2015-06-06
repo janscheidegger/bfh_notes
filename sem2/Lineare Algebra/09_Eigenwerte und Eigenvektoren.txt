@@ -1,0 +1,36 @@
+
+## Eigenwerte und Eigenvektoren
+Wenn Transformationen $\vec{y} = A \vec{x}$ in einer quadratischen Matrix zu
+Lösungen führt, welche immer vielfache von sich selber oder sich selber bilden,
+so nennt man diese Eigenvektoren. Der Nullvektor ist kein Eigenvektor.
+
+### Bestimmung der Eigenvektoren
+Um die Eigenvektoren einer Matrix zu bestimmen, muss man zuerst die Eigenwerte
+bestimmen. Dies sind die Werte $\lambda$, welche den Faktor darstellen um
+welche der Vektor vervielfacht wird.
+
+Um die Eigenwerte zu bestimmen muss man lediglich die Determinante der Matrix
+mit 0 gleichsetzen. heisst: $\vec{x} - I\cdot \lambda$
+
+Daraus folgt die folgende Matrix der die Determinante ausgerechnet werden muss:
+$$ \begin{pmatrix}
+a_{11} - \lambda a_{12} a_{13}\\
+a_{21} a_{22} - \lambda a_{23}\\
+a_{31} a_{32} a_{33} - \lambda\\
+\end{pmatrix}$$
+
+von dieser Matrix muss anschliessend die Determinante bestimmt werden und diese
+nach 0 aufgelöst werden. Diese Gleichung wird das charakteristische Polynom der
+Matrix genannt. Die Resultate dieser Gleichung sind dann die
+Eigenwerte.
+
+Die Eigenvektoren können danach durch die Eigenwerten ausgerechnet werden.
+
+$(\vec{y} - I\cdot \lambda)\cdot \vec{x} = \vec{0}$
+
+Diese Matrixmultiplikation ergibt ein Lineares Gleichungssystem welches nach
+x aufgelöst werden kann um die Werte des Eigenvektores zu bestimmen. Diese
+Gleichungssystem muss für jeden Eigenwert durchgeführt werden um alle
+Eigenvektoren zu bestimmen.
+
+

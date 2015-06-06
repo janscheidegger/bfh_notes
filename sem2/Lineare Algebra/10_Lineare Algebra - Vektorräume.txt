@@ -1,0 +1,29 @@
+
+## Vektorräume
+
+Der Vektorraum $\mathbb{R}^n$ enthält als Elemente alle Vektoren mit $n$
+Komponenten. Ein Vektorraum ist dann ein Vektorraum, wenn die Skalare
+Multiplikation und die Vektoraddition gültig ist. Der grösstmögliche Vektorraum
+in $\mathbb{R}^3$ ist $\mathbb{R}^3$. Wenn durch eine Vektoraddition oder eine
+Skalare Multiplikation ein Vektor entstehen kann, welcher nicht im Vektorraum
+definiert ist, so ist es kein gültiger Vektorraum
+
+### Lineare Unabhängigkeit
+
+Vektoren sind voneinander linear Abhängig, wenn durch Skalare Multiplikation der
+Nullvektor entstehen kann, wobei alle Skalare als 0 zu definieren hierbei
+ausgeschlossen ist. Bsp: $\lambda_1 \vec{x}_1 ... \lambda_n \vec{x}_n $
+
+$$\begin{pmatrix}
+1 2 3\\
+2 4 8\\
+3 6 3\\
+\end{pmatrix}$$
+
+Sind linear voneinander Abhängig, da die Skalare 2, 1, 0 den Nullvektor ergeben.
+
+### Lineare Hülle!
+
+###
+
+

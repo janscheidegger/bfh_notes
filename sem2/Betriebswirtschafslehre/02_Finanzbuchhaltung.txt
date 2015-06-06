@@ -1,0 +1,264 @@
+
+##Finanzbuchaltung
+
+### Bilanz
+
+* Per Stichtag erstellte übersicht
+* Aktiven: künftige Nutzen erstellen, Illustrieren der Ausgaben
+* Passiven: Zukünfitige Abgänge Illustrieren, Herkunft von Ressourcen aufzeigen
+
+###Kontenführung
+
+Konten werden unterschiedlich verbucht, je nachdem was für ein Typ sie sind. Der
+unterschied besteht darin, wo die "positiven" Veränderungen verbucht werden. Bei
+Aktiven und Aufwänden werden "positive" Veränderungen Links hinzugefügt, bei
+Passiven und ertrag auf der Rechten Seite. Die negativen Veränderungen sind
+entsprechend auf der anderen Seite.
+
+####Buchungssätze
+
+* Bilden Geschäftsfälle ab
+* Enthalten Datum, Betrag, Text, betroffene Konten.
+* Betroffene Konten werden mit / getrennt (gesprochen: an) Bank/Kasse = Bank an
+  Kasse
+* Es wird immer zuerst das Konto eingtragen, bei dem der Betrag auf der Linken
+  Seite steht, dann das bei dem der Betrag auf der Rechten Seite steht.
+
+#### Abschluss
+
+1. Abschluss der Aufwandkonten
+2. Abschluss der Ertragskonten (Gewinn aus Aufwand Ertrag, siehe 5.)
+3. Abschluss der Aktivkonten
+4. Abschluss der Passivkonten
+5. Verbuchen des Gewinnes
+
+Als Ergebnis erhält man nun die Schlussbilanz, welche gleichzeitig die
+Eröffnungsbilanz für das nächste Jahr bildet.
+
+### Liquidität und Erfolg
+
+* Ein Geschäftsfall ist liquiditätswirksam (L) wenn genau ein Liquiditätskonto
+  tangiert wird, sonst NICHT. (LU)
+* Ein Geschäftsfall ist erfolgswirksam (E), wenn ein Konto der Erfolgsrechnung
+  tangiert wird, sonst NICHT. (EU)
+
+Beispiele:
+
+* Kasse / Debitoren (L), (EU)
+* Kasse / Warenertrag (L), (E)
+* Kasse / Post (LU), (EU) ZWEI Liquiditätskonten = (LU)
+* Bank / Warenertrag (L), (E)
+* Bank / Maschine (L), (EU)
+
+### Warenverkehr
+
+Beim Warenverkehr ist zu beachten: Bezugsspesen (Beim Aufwand), Retouren, Rabatte, Skonti,
+Frachtspesen (Beim Ertrag).
+
+* Bei Lagezukäufen mit gleichem Verbrauch $\rightarrow$ keine Bestandesänderung
+* Verbrauch ist kleiner als Lagerzukäufe $\rightarrow$ Bestandeszunahme
+* Verbrauch ist grösser als Lagerzukäufe $\rightarrow$ Bestandesabnahme
+
+* Einkäufe gegen Kredit (Bestandeszunahme) Warenaufwand/Kreditoren
+* Verkäufe gegen Kredit Debitoren/Warenertrag
+
+####Einstandspreis
+
+Einstandspreis (EP) = Markpreis - Rabatte + Transport- /Verladekosten + Versicherungen +  Zölle + Steuern
+
+#### Formeln
+
+* Anfangsbestand mit Einstandpreis
+* Kauf zum Einstandspreis
+* Verkauf zum Verkaufspreis
+* Endbestand zum Einstandspreis
+* Bestandeskorrektur Warenbestand/Warenaufwand zum Einstandspreis (Warenaufwand
+  nimmt ab! Anfangsbestand - Endbestand
+* Nettoerlös: Verkaufte Waren zum Verkaufspreis
+* Bruttogewinn: Nettoerlös - Einstandspreis der verkauften Waren.
+
+### Bestandesbewertung
+
+Problematik: Bestände, die zu verschiedenen Preisen eingekauft worden sind, vermischen sich im Lager 
+
+#### Durchschnittsverfahren
+
+"Normale" Durchschnittsberechnung mit "Preis Gesamtmenge" / "Anzahl
+Gesamtmenge". um den Preis der Gesamtmenge zu ermitteln, ist der jeweilige
+Einkaufspreis zu verwenden.
+
+* Gewogener Durchschnitt - Berechnung eines pauschalen Durchschnittspreises
+* Gleitender Durchschnitt - Nach jedem Lagerzugang wird ein neuer
+  Durchschnittspreis errechnet.
+
+#### Verbrauchsverfahren
+
+* FIFO - First in First out älteste Güter werden als erstes Verbraucht
+* LIFO - Jünste Güter werden als erstes Vebraucht
+* HIFO - Güter mit dem höchsten Einstandpreis werden als erstes verkauft.
+
+TODO: Frage zu übung 2.7 Gleitender durchschnittspreis bekannt vor Zugang??
+
+### Betriebsmittel
+
+#### Abschreibungen
+
+Sind nötig wegen: 
+
+* Verbrauch/Verschleiss
+* Fehlinvestitionen/Bilanzpolitik/Technischer Fortschritt
+* Ablauf von Nutzungsrechten
+
+***Methoden des Abschreibens***
+
+* Direkte Methode: Abschreibungen/Fahrzeuge - Direkt auf Konto
+* Indirekte Methode: Abschreibungen/Werteberichtigung Fahrzeuge - Wert von
+  Fahrzeuge bleibt bestehen.
+
+***Veräusserung von Anlagevermögen***
+
+* Direkte Abschreibung $\rightarrow$ Keine korrektur nötig
+* Indirekte Abschreibung $\rightarrow$ Auflösung Werteberichtigung
+* Verkauf mit Gewinn $\rightarrow$ Korrektur Buchwert nach oben
+* Verkauf mit Verlust $\rightarrow$ Korrektur Buchwert nach unten
+
+***Wertebetrachtung***
+
+* Anschaffungspreis $A_0$
+* Restwert $R$ am Ende der Nutzungsdauer $T$
+
+***Lineare Abschreibung***
+
+$d=\frac{A_0-R}{T}$
+
+$Buchwert\;t\; B_t = A_0 - d\cdot t$
+
+Stetige Abschreibungsbetrag Abhängig von der Nutzungsdauer und vom erwarteten Restwert.
+
+***Geometrisch-degressive Abschreibung***
+
+$d_t = q\cdot B_{t-1}$
+
+$B_t = A_0 \cdot (1-q)^t$
+
+Werteverlust zu Beginn am grössten dann sinkend.
+
+###Debitoren
+
+***Typische Vorfälle***
+
+* Kreditverkauf von Waren, Anrechnung von Rabatten
+* Banküberweisung einer Rechnung
+* Debitorenverlust (Der geschuldete Betrag ist definitv verloren) $\rightarrow$
+  Reduktion des Debitorenkontos
+* Delkredere (Der geschuldete Betrag wird noch mit einer gewissen
+  Wahrscheinlichkeit erwartet) $\rightarrow$ Korrektur des Bruttowerts des
+  Debitorenkontos über Delkredere-Konto
+
+TODO Mehr infos!!
+* Debitorenverlust wird direkt auf das Debitorenverlustkonto gebucht.
+* Am Ende einer Periode werden 5%  des geschuldeten Betrages auf Delkredere Verbucht
+
+#### Zahlungserinnerung und Betreibung
+
+Kunde bezahlt nicht:
+
+* Zahlungserinnerung nach 30 TAgen
+* Nach weiteren 30 Tagen 1. Mahnung mit kurzer Zahlungsfrist
+* nach verstrichener Frist: 2. Mahnung mit kurzer Zahlungsfrist und
+  Betreibungsandrohung
+
+Betreibung: 
+
+* Betreibungsbegehren am Wohn- bzw. Geschäftssitz des Schuldners
+* Rechnung für Zahlungsbefehlt und Betreibungsgebühr
+* Kunde bezahlt = fertig
+* Kunde bezahlt nicht = innert Jahresfrist Fortsetzung verlangen
+
+Rechtvorschlag:
+
+* "Einsprache" gegen Forderung
+* Vor Gericht öffnung verlangen
+* Kosten vs. Nutzen??
+
+### Personalaufwand
+
+* Lohn Gehalt
+* Beträge an Sozialwerke
+    * AHV, IV, EO
+    * ALV (Arbeitslosenversicherung)
+    * NBU
+    * Betriebsunfall
+    * BVG (Berufliche Vorsorge)
+    * KTG (Krankentaggeld)
+
+Die Hälfte hiervon wird vom Aufwandkonto Lohn gebucht, die andere vom Konto
+Sozialaufwände.
+
+### Abgrenzung
+
+Zweck: korrekte Zuweisung von Aufwand und Ertrag auf Erfolgsrechnung mehrerer
+Geschäftsperioden.
+
+Paarweise Abgrenzungsbuchungen/Gegenbuchungen
+
+* Abgrenzungsbuchungen gegen Ende der laufenden Periode
+* Gegenbuchungen am Anfang der Folgeperiode
+
+* Transitorische Aktiven/Aufwand
+    * Aufwand (alte Periode) nützt neuer Periode
+    * Beispiel: Lohnvorschüsse
+* Transitorische Aktiven/Ertrag
+    * Ertrage die zur laufenden Periode gehören aber erst in der Zukunft
+      anfallen.
+    * Miete wird im nachhinein fakturiert
+* Transitorische Passiven/Ertrag
+    * Verbuchter Ertrag "gehört" zur nächsten Periode
+    * Im Voraus erhaltene Mieten
+* Transitorische Passiven/Aufwand
+    * Aufwand, der zur laufenden Periode gehört, aber erst in der Folgeperiode
+      verbucht werden kann.
+    * Aufgelaufener Hypothekarzins
+
+### Mehrwertsteuer
+
+Mehrwertsteuerfrei wenn Umsatz/Jahr < 100'000 CHF oder Sport- oder Kulturverein
+oder Gemeinnützig
+
+* Ordentlicher Satz 8.0%
+* Reduzierter Satz 2.5%
+    * Esswaren
+    * Trinkwaren
+    * Medikamente
+    * Druck
+* Sonderbeherbergung
+    * Hotelerie
+* Von der Steuer ausgenommen
+    * Gesundheitswesen
+    * Erziehung
+* Von der Steuer befreite Umsatze
+    * Export (Vorsteuerabzug möglich)
+
+* Aktivkonten: Vorsteuer
+* Passivkonten: Umsatzsteuer
+* Saldo zeigt die Bruttosteuerschuld
+
+Mehrwertsteuer wird auf den Verkaufspreis aufgerechnet
+
+In der Bilanz/Erfolgsrechnung sind 2 Buchungen
+
+***Vorsteuer***
+
+* Einkauf (Wareneinkauf / Kreditoren 108)
+* MWST (Vorsteuer/Wareneinkauf 8)
+
+***Umsatzsteuer***
+
+* Debitoren / Warenverkauf 108
+* Warenverkauf / Umsatzsteuer 8
+
+### Einzelunternehmen
+
+### Gewinnverteilung
+
+### Geldflussrechnung
