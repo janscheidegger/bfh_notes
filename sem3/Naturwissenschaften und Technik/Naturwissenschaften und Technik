@@ -1,0 +1,60 @@
+
+## Normalverteilung
+
+Häufig tritt bei einem Histogramm die Normalverteilung auf, d.h. 70% aller
+MEsserwerte liegen im Interval [x-s, x+s] und ca 95% aller Werte liegen im
+Intervall [x-2s, x+2s]
+
+## Standardabweichung
+
+ist eine eindeutig definierte Grösse, welche angibt wie gross die Streuungen der
+einzlenen Messungen ist ist die Standardabweichung s. im folgenden bezweichen
+$x_i$ die einzelnen Messungen.
+
+Die quadratische Standardabweichung ist wie folgt definiert.
+$s^2=\frac{1}{N-1}\times \sum_{i=1}^N (\bar{x} - x_i)^2$
+
+Für die Standardabweichung müssen wir hieraus nun noch die Wurzel ziehen.
+
+### Relativer Fehler.
+
+Der Relative Fehler ergibt sich aus: $r=\pm \frac{s}{<X>}$
+
+## Kinematik
+
+Durchschnittsgeschwindigkeit $<\vec{v} = \frac{\Delta \vec{x}}{\Delta t}$
+
+Momentangeschwindigkeit $\vec{v} = \lim\limits_{\Delta t \to 0} \frac{\Delta
+\vec{x}}{\Delta t}$
+
+Durchschnittsbeschleunigung = $<\vec{a} = \frac{Delta \vec{v}}{\Delta t}$
+
+Momentanbeschleunigung $\vec{a} = \lim\limits_{\Delta t \to 0} \frac{\Delta
+\vec{v}}{\Delta t}$
+
+$a=konst.$
+
+$v(t) = v_0 + a \cdot t$
+
+$x(t) = x_0 + v_0 \cdot t + \frac{a}{2} \cdot t^2$
+
+$\Delta x = \frac{v^2 - v_0^2}{2a}$
+
+Drehwinkel $\varphi [\varphi] = rad$
+
+Winkelgeschwindigkeit = $\omega = \lim\limits_{\Delta t \to 0} \frac{\Delta
+\varphi}{\Delta t}$
+
+Winkelbeschleunigung = $\alpha = \lim\limits_{\Delta t \to 0} \frac {\Delta
+\omega}{\Delta t}$
+
+$\alpha = konst.$
+
+$\omega(t) = \omega_0 + \alpha \cdot t$
+
+$\varphi(t) = \varphi_0+\omega_0 \cdot t + \frac{\alpha}{2} \cdot t^2$
+
+$\Delta \varphi = \frac{\omega^2 - \omega_0^2}{2 \alpha}$
+
+Tangentialgeschwindigkeit $v_t = \lim\limits_{\delta t \to 0} \frac {\Delta
+b}{\Delta t}$
