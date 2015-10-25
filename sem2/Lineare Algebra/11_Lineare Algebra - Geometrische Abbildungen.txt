@@ -1,0 +1,128 @@
+
+## Gemoetrische Abbildungen
+
+### Lineare Abbildungen
+Eine Abbildung heisst linear, wenn sie folgende Eigenschaften besitzt:
+
+* $$F(\vec{x} + \vec{y} = F(\vec{x}) + F(\vec{y})$$
+* $$F(\lambda \vec{x}) = \lambda F(\vec{x})$$
+
+Eine lineare Abbildung ist also vertrtäglich mit den beiden Basisoperationen
+Vektoraddition und skalare Multiplikation.
+
+Jede Lineare Abbildung bildet den Nullvektor in den Nullvektor ab!
+
+2 lineare Abbildungen können "gleichzeitig" ausgeführt werden, indem sie mit
+Matrixmultiplikation multiplixiert werden.
+
+
+#### Streckung mit Faktor c
+
+$$\begin{pmatrix}
+c & 0\\
+0 & c\\
+\end{pmatrix}$$
+
+#### Rotation um 90 Grad 
+
+$$\begin{pmatrix}
+0 & -1\\
+1 & 0\\
+\end{pmatrix}$$
+
+#### Rotation um $\lambda$ in positiver Richtung (Gegen Uhrzeigersinn)
+
+$$\begin{pmatrix}
+cos \lambda & -sin \lambda \\
+sin \lambda & cos \lambda \\
+\end{pmatrix}$$
+
+#### Spiegelung an der Winkelhalbierenden x = y
+
+$$\begin{pmatrix}
+0 & 1\\
+1 & 0\\
+\end{pmatrix}$$
+
+#### Scherung mit Faktor c
+
+$$\begin{pmatrix}
+1 & c\\
+0 & 1\\
+\end{pmatrix}$$
+
+#### Orthagonalprojektion auf die X Achse
+
+$$\begin{pmatrix}
+1 & 0\\
+0 & 0\\
+\end{pmatrix}$$
+
+### Affine Abbildungen (Homogene Transformationsmatrizen)
+
+Um eine Matrix im homogen darzustellen, benötigt man eine Zeile und eine Spalte
+mehr. Dafür ist es möglich ebenfalls nicht affine Abbildungen darzustellen.
+
+Dazu ist ist bei jedem Vektor in der untersten Zeile eine 1 anzuhängen.
+
+$$\begin{pmatrix}
+x \\
+y \\
+1 \\
+\end{pmatrix}$$
+
+Skalierung = $$\begin{pmatrix}
+s_x & 0 & 0 \\
+0 & s_y & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+
+Translation = $$\begin{pmatrix}
+1 & 0 & d_x \\
+0 & 1 & d_y \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+
+Rotation = $$\begin{pmatrix}
+cos \lambda & -sin \lambda & 0 \\
+sin \lambda & cos \lambda & 0 \\
+0 & 0 & 1\\
+\end{pmatrix}$$
+
+Rotation in 3D um x = $$\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & cos \lambda & -sin \lambda & 0 \\
+0 & sin \lambda & cos \lambda & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
+
+Rotation in 3D um y = $$\begin{pmatrix}
+cos \lambda & 0 & sin \lambda & 0 \\
+0 & 1 & 0 & 0 \\
+-sin \lambda & 0 & cos \lambda & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
+
+Rotation in 3D um x = $$\begin{pmatrix}
+cos \lambda & -sin \lambda & 0 & 0 \\
+sin \lambda & cos \lambda &  & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
+
+Perspektive = $$\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & \frac{1}{d} & 0 \\
+\end{pmatrix}$$
+
+Orthagonalprojektion auf x-y Ebene = $$\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & & 1 \\
+\end{pmatrix}$$
+
+Bei den Orthagonalprojektionen wird immer auf diejenige Ebene projekziert bei
+denen 1 gesetzt ist!

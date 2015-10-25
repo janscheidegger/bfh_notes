@@ -1,0 +1,91 @@
+
+## Komplexe Zahlen
+
+### Einführung
+Komplexe Zahlen bestehen aus 2 Teilen, dem Reelen teil Re() und dem Imaginären
+Teil Im(). Der immaginäre Teil beinhaltet die imaginäre Einheit i, deren Quadrat
+-1 ergibt. Potenzen von i: $$i^2 = -1\, i^3 = -i\, i^4 = 1\, i^5 = i$$
+
+Die Potenzen von i sind zyklisch in 4k, also alle 4 potenzen wiederholt sich i.
+
+Die komplexe Zahlen können auf der Gaussschen Zahlenebene eingezeichnet werden,
+hierbei ist die y Achse der immaginäre Anteil und die x Achse der reele Anteil.
+Man kann eine Komplexe Zahl also wie einen Vektor mit 2 Komponenten betrachten.
+
+Eine komplexe Zahl z ist: $$z = a + \mathrm{i} b$$
+
+Die konjugiert komplexe Zahl ist: $$\bar{z} = a - \mathrm{i} b$$
+
+Mit der immaginären Einheit kann gerechnet werden wie mit einer Variablen,
+ausser das ihr Quadrat zu -1 umgewandelt werden kann / muss
+
+So ergibt das Produkt von $$ z \cdot \bar{z} = (x + iy) \cdot (x -iy) = x^2 + y^2$$
+
+Dies kann man dazu ausnutzen um i aus dem Nenner zu eliminieren
+
+### Polarform
+
+Alle komplexen Zahlen können auf der Gaussschen Ebene dargestellt werden,
+deswegen kann man eine komplexe Zahl eigentlich als Winkel betrachten. Dieser
+Winkel wird auch Argument genannt. Es ist der Winkle zwischen  $$\vec{0P}$$ und
+der reellen Achse. Es kann berechnet werden mit $tan(\lambda) = \frac{y}{x}$
+
+Der Betrag ist die "Länge" vom Ursprung zur komplexen Zahl.
+
+Wir haben nun also:
+
+$$ x = r cos(\lambda)$$ und $$y = r sin(\lambda)$$
+
+Daraus folgt: $$z = x+iy = r cos(\lambda) + i\cdot r \cdot sin(\lambda)
+= r \cdot (cos(\lambda) + i sin(\lambda))$$
+
+Aufgrund der Periodizität der trigonometrischen Funktionen können wir immer ein
+Vielfaches von 2 Pi addieren oder subtrahieren ohne die geometrische Lage zu
+verändern.
+
+####Muliplikation in Polarform
+
+$$ z_1 \cdot z_2 = r_1r_2[cos(\lambda_1 + \lambda_2) + i sin(\lambda_1
++ \lambda_2)]$$
+
+
+####Division in Polarform
+
+$$ \frac{z_1}{z_2} = \frac{r_1}{r_2} \cdot [cos(\lambda_1 - \lambda_2)
++ i sin(\lambda_1 - \lambda_2)]$$
+
+####Potenzen in Polarform
+
+$$z^n = r^n(cos(\lambda) + i sin(\lambda)^n = r^n(cos(n \lambda) + i sin(n
+\lambda))$$
+
+####Wurzeln in Polarform
+
+$z^{\frac{1}{n}} =\sqrt[n]{r}[cos(\frac{\lambda}{n} + k\frac{2\Pi}{n})
++ i sin(\frac{\lambda}{n} + k\frac{2\Pi}{n})]$$
+
+Eine komplexe Zahl hat verschieden wurzeln, durch das erhöhen von k können alle
+verschiedenen gefunden werden.
+
+### Exponentialschreibweise
+
+$$cos(\lambda) + i sin(\lambda) = e^{i\lambda}$$
+
+Da Sinus und Cosinus 2-Pi Periodisch sind, könen wir aus dieser Formel auf die
+Periodizität der komplexen Exponentialfuntion schliessen.
+
+$$e^{i\lambda} = e^{(\lambda +k2\Pi)}$$
+
+$$z = re^{i\lambda}$$ ist die komplete komplexe wobei $$\lambda$$ das Argument
+ist und r der Betrag.
+
+### Winkel im komplexen Zahlenraum
+
+Da man eine komplexe Zahl auch als Winkel beschreiben kann, ist es möglich
+einen Winkel zu "addieren" in dem man zwei komplexe Zahlen mulitpliziert.
+
+Hat man also eine komplexe Zahl z = (5 + 3i), kann man dieser einfach einen
+Winkel addieren in dem man sie mulitpliziert. z.B mit i um einen Winkel von 90
+Grad zu addieren. Dies würde dann eine Rotation um 90 Grad entsprechen mit dem
+Fixpunkt 0,0, also im Zentrum. Will man den Fixpunkt ändern, muss man erst
+verschieben, dann drehen, dann zurückschieben.

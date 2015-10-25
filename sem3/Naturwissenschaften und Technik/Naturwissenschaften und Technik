@@ -58,3 +58,25 @@ $\Delta \varphi = \frac{\omega^2 - \omega_0^2}{2 \alpha}$
 
 Tangentialgeschwindigkeit $v_t = \lim\limits_{\delta t \to 0} \frac {\Delta
 b}{\Delta t}$
+
+## Licht
+
+### Brechungsindex
+
+Das Verhaltnis zwischen Lichtgeschwindigkeit im Vakuum und Lichtgeschwindigkeit
+im Medium heisst Brechnungsindex.
+$n = \frac{c_{vac}}{c_{med}}$
+
+### Reflexionsgesetz
+
+Der Einfallswinkel ist bei einer Reflexion gleich dem Ausfallswinkel!
+
+Brechungsgesetz: $n_1 \cdot sin(\theta_i) = n_2 \cdot sin(\theta_r)$
+
+Ist der Brechungsindex grösser, so heisst das MEdium optisch dichter in einem
+Optisch dichteren Medium wird ein Lichtstrahl weniger stark gebrochen.
+
+### Reflexion bei senkrechtem Einfall von Licht (Spiegelung einer Fläche)
+
+$R_{TE} = R_TM = (\frac{n_1-n_2}{n_1+n_2})^2$
+

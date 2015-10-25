@@ -1,4 +1,4 @@
-
+﻿
 # Lineare Algebra
 
 ## Einführung Vektoren
@@ -149,9 +149,9 @@ $|\vec{a} \times \vec{b}| \Rightarrow |\vec{a}| \cdot \vec{b} \cdot sin\alpha$
 Berechnung: 
 $$ \vec{a} \times \vec{b} = 
 \begin{pmatrix}
-a_2 \cdot b_3 - a_2 \cdot b_2\\
+a_2 \cdot b_3 - a_3 \cdot b_2\\
 a_3 \cdot b_1 - a_1 \cdot b_3\\
-a_1 \cdot b_2 - a_3 \cdot b_1\\
+a_1 \cdot b_2 - a_2 \cdot b_1\\
 \end{pmatrix}
 $$
 

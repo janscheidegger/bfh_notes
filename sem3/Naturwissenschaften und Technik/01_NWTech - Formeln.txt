@@ -71,12 +71,12 @@ $n = \frac{c_{vac}}{c_{med}}$
 
 Der Einfallswinkel ist bei einer Reflexion gleich dem Ausfallswinkel!
 
-Brechungsgesetz: $ n_1 \cdot sin(\theta_i) = n_2 \cdot sin(\theta_r}
+Brechungsgesetz: $n_1 \cdot sin(\theta_i) = n_2 \cdot sin(\theta_r)$
 
 Ist der Brechungsindex grösser, so heisst das MEdium optisch dichter in einem
 Optisch dichteren Medium wird ein Lichtstrahl weniger stark gebrochen.
 
 ### Reflexion bei senkrechtem Einfall von Licht (Spiegelung einer Fläche)
 
-$R_{TE} = R_TM = (\frac{n_1-n_2}{n_1+n_2)^2$
+$R_{TE} = R_TM = (\frac{n_1-n_2}{n_1+n_2})^2$
 

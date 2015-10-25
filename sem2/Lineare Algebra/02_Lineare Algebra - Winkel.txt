@@ -32,14 +32,14 @@ Danach kann man mit den Normalenvektor und dem Richtungsvektor der Geraden rechn
 
 $cos \varphi = \frac{|\vec{n} \cdot \vec{r_1}|}{|\vec{n}| \cdot |\vec{r_1}|}$
 
-Danach muss noch 90° Minus den Winkel Phi gerechnet werden, da man sonst den
+Danach muss noch 90 Grad Minus den Winkel Phi gerechnet werden, da man sonst den
 Winkle zwischen Richtungsvektor und Normalenvektor hätte und nicht zwischen
 Richungsvektor und Ebene.
 
 
 ### Winkel zwischen Ebene und Ebene
 Bei zwei Ebenen kann man den Winkel zwischen den zwei Normalenvektoren
-berechnen. Ist dieser Winkel grösser als 90° so muss 180° - Winkel gerechnet
+berechnen. Ist dieser Winkel grösser als 90 Grad so muss 180 Grad - Winkel gerechnet
 werden, denn es ist immer der kleinstmögliche Winkel gefragt.
 
 
